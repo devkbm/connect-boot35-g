@@ -82,7 +82,7 @@ tasks.named('test') {
 }
 
 
-def querydslDir = "build/generated/querydsl"
+def querydslDir = "build/generated"
 
 tasks.withType(JavaCompile) {
     options.generatedSourceOutputDirectory = file(querydslDir)
