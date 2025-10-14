@@ -1,4 +1,4 @@
-package com.like.hrm.payitem.application.dto.payitem;
+package com.like.hrm.payitem.application.port.in.payitem.save;
 
 import com.like.hrm.payitem.domain.PayItem;
 import com.like.hrm.payitem.domain.PayItemId;

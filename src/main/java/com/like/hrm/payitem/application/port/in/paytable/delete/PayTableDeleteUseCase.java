@@ -1,4 +1,4 @@
-package com.like.hrm.payitem.application.port.in.paytable;
+package com.like.hrm.payitem.application.port.in.paytable.delete;
 
 public interface PayTableDeleteUseCase {
 

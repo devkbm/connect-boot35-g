@@ -1,10 +1,10 @@
-package com.like.hrm.payitem.adapter.out.db;
+package com.like.hrm.payitem.adapter.out.db.paytable;
 
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
-import com.like.hrm.payitem.adapter.out.db.data.PayTableJpaRepository;
+import com.like.hrm.payitem.adapter.out.db.paytable.data.PayTableJpaRepository;
 import com.like.hrm.payitem.application.port.out.PayTableCommandDbPort;
 import com.like.hrm.payitem.domain.PayTable;
 

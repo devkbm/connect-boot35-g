@@ -1,6 +1,8 @@
 package com.like.hrm.payitem.domain;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,9 +26,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "HRMPAYTABLE")
 @EntityListeners(AuditingEntityListener.class)
 public class PayTable extends AbstractAuditEntity {
-
+	
 	@Id
-	@Column(name="ID")
+	@Column(name="PAY_ITEM_NAME")	
 	String id;
 	
 	@Column(name="ORG_CD")
@@ -34,6 +36,9 @@ public class PayTable extends AbstractAuditEntity {
 	
 	@Column(name="PAY_ITEM_CODE")
 	String payItemCode;
+	
+	@Column(name="EFFECTIVE_DT")
+	LocalDate effectiveDate;
 
 	@Comment("직종코드")
 	@Column(name="OCCUPATION_CODE")
@@ -59,6 +64,7 @@ public class PayTable extends AbstractAuditEntity {
 	public PayTable(
 			String companyCode,
 			String payItemCode,
+			LocalDate effectiveDate,
 			String occupationCode,
 			String jobGradeCode,
 			String payStepCode,
@@ -66,9 +72,10 @@ public class PayTable extends AbstractAuditEntity {
 			Boolean isEnable,
 			String comment
 			)	{
-		this.id = companyCode + payItemCode + occupationCode + jobGradeCode + payStepCode;
+		this.id = companyCode + payItemCode + effectiveDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")) + occupationCode + jobGradeCode + payStepCode;
 		this.companyCode = companyCode;
 		this.payItemCode = payItemCode;
+		this.effectiveDate = effectiveDate;
 		this.occupationCode = occupationCode;
 		this.jobGradeCode = jobGradeCode;
 		this.payStepCode = payStepCode;

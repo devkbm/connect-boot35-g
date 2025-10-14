@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.like.core.message.MessageUtil;
-import com.like.hrm.payitem.application.port.in.paytable.PayTableDeleteUseCase;
+import com.like.hrm.payitem.application.port.in.paytable.delete.PayTableDeleteUseCase;
 
 @RestController
 public class PayTableDeleteController {

@@ -1,4 +1,4 @@
-package com.like.hrm.payitem.adapter.out.db.data;
+package com.like.hrm.payitem.adapter.out.db.payitem.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;

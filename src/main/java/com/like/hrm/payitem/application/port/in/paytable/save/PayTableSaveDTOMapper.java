@@ -1,17 +1,18 @@
-package com.like.hrm.payitem.application.dto.paytable;
+package com.like.hrm.payitem.application.port.in.paytable.save;
 
 import com.like.hrm.payitem.domain.PayTable;
 
-public class PayTableFormDTOMapper {
+public class PayTableSaveDTOMapper {
 
-	public static PayTableFormDTO toDTO(PayTable entity) {
+	public static PayTableSaveDTO toDTO(PayTable entity) {
 		if (entity == null) return null;
 				
-		return PayTableFormDTO
+		return PayTableSaveDTO
 				.builder()
 				.id(entity.getId())
 				.companyCode(entity.getCompanyCode())
 				.payItemCode(entity.getPayItemCode())
+				.effectiveDate(entity.getEffectiveDate())
 				.occupationCode(entity.getOccupationCode())
 				.jobGradeCode(entity.getJobGradeCode())
 				.payStepCode(entity.getPayStepCode())
@@ -21,10 +22,11 @@ public class PayTableFormDTOMapper {
 				.build();
 	}
 	
-	public static PayTable newEnity(PayTableFormDTO dto) {
+	public static PayTable newEnity(PayTableSaveDTO dto) {
 		return new PayTable(
 				dto.companyCode(),
 				dto.payItemCode(),
+				dto.effectiveDate(),
 				dto.occupationCode(),
 				dto.jobGradeCode(),
 				dto.payStepCode(),
@@ -34,7 +36,7 @@ public class PayTableFormDTOMapper {
 				);
 	}
 	
-	public static PayTable modify(PayTable entity, PayTableFormDTO dto) {
+	public static PayTable modify(PayTable entity, PayTableSaveDTO dto) {
 		entity.modify(
 				dto.wageAmount(), 
 				dto.isEnable(), 

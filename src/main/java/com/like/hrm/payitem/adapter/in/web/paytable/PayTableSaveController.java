@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.like.core.message.MessageUtil;
-import com.like.hrm.payitem.application.dto.paytable.PayTableFormDTO;
-import com.like.hrm.payitem.application.port.in.paytable.PayTableSaveUseCase;
+import com.like.hrm.payitem.application.port.in.paytable.save.PayTableSaveDTO;
+import com.like.hrm.payitem.application.port.in.paytable.save.PayTableSaveUseCase;
 
 import jakarta.validation.Valid;
 
@@ -23,7 +23,7 @@ public class PayTableSaveController {
 	}
 	
 	@PostMapping("/api/hrm/paytable")
-	public ResponseEntity<?> save(@RequestBody @Valid PayTableFormDTO dto) {			
+	public ResponseEntity<?> save(@RequestBody @Valid PayTableSaveDTO dto) {			
 														
 		useCase.save(dto);
 											 				
