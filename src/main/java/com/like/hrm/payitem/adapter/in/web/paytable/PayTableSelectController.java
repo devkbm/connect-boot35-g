@@ -23,7 +23,7 @@ public class PayTableSelectController {
 	@GetMapping("/api/hrm/paytable/{id}")
 	public ResponseEntity<?> select(@PathVariable String id) {
 								
-		PayTableSaveDTO dto = useCase.select(id); 
+		PayTableSaveDTO dto = useCase.select(Long.parseLong(id)); 
 		
 		return toOne(dto, MessageUtil.getQueryMessage(dto == null ? 0 : 1));
 	}

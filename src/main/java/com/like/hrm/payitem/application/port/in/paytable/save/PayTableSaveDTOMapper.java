@@ -9,7 +9,7 @@ public class PayTableSaveDTOMapper {
 				
 		return PayTableSaveDTO
 				.builder()
-				.id(entity.getId())
+				.id(entity.getId().toString())
 				.companyCode(entity.getCompanyCode())
 				.payItemCode(entity.getPayItemCode())
 				.effectiveDate(entity.getEffectiveDate())

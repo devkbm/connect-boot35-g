@@ -6,9 +6,11 @@ import com.like.hrm.payitem.domain.PayTable;
 
 public interface PayTableCommandDbPort {	
 	
-	Optional<PayTable> select(String id);
+	boolean checkDuplication(PayTable entity);
+	
+	Optional<PayTable> select(Long id);
 	
 	void save(PayTable entity);
 	
-	void delete(String id);
+	void delete(Long id);
 }

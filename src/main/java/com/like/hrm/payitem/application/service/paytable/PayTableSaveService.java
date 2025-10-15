@@ -8,6 +8,8 @@ import com.like.hrm.payitem.application.port.in.paytable.save.PayTableSaveUseCas
 import com.like.hrm.payitem.application.port.out.PayTableCommandDbPort;
 import com.like.hrm.payitem.domain.PayTable;
 
+import jakarta.persistence.EntityExistsException;
+
 @Service
 public class PayTableSaveService implements PayTableSaveUseCase {
    
@@ -25,8 +27,13 @@ public class PayTableSaveService implements PayTableSaveUseCase {
 		
 		if (id == null) {
 			entity = PayTableSaveDTOMapper.newEnity(dto);
+			
+			if (dbPort.checkDuplication(entity)) {
+				throw new EntityExistsException("중복된 데이터가 존재합니다."); 
+			}
+			
 		} else {
-			entity = this.dbPort.select(dto.id()).orElse(null);
+			entity = this.dbPort.select(Long.parseLong(dto.id())).orElse(null);
 			
 			entity = PayTableSaveDTOMapper.modify(entity, dto);
 		}

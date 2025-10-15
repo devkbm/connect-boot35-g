@@ -15,7 +15,7 @@ public class PayTableDeleteService implements PayTableDeleteUseCase {
 	}
 	
 	@Override
-	public void delete(String id) {
+	public void delete(Long id) {
 		this.dbPort.delete(id);		
 	}
 

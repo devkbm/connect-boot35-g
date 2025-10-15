@@ -3,6 +3,9 @@ package com.like.hrm.payitem.application.port.in.paytable.query;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import lombok.Data;
+
+@Data
 public class PayTableQueryResultDTO {
 
 	String id;

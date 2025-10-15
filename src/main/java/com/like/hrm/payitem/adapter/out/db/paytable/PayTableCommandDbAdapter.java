@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.like.hrm.payitem.adapter.out.db.paytable.data.PayTableJpaRepository;
 import com.like.hrm.payitem.application.port.out.PayTableCommandDbPort;
 import com.like.hrm.payitem.domain.PayTable;
+import com.like.hrm.payitem.domain.QPayTable;
 
 @Repository
 public class PayTableCommandDbAdapter implements PayTableCommandDbPort {
@@ -18,7 +19,7 @@ public class PayTableCommandDbAdapter implements PayTableCommandDbPort {
 	}
 	
 	@Override
-	public Optional<PayTable> select(String id) {
+	public Optional<PayTable> select(Long id) {
 		return this.repository.findById(id);
 	}
 
@@ -28,8 +29,21 @@ public class PayTableCommandDbAdapter implements PayTableCommandDbPort {
 	}
 
 	@Override
-	public void delete(String id) {
+	public void delete(Long id) {
 		this.repository.deleteById(id);
+	}
+
+	@Override
+	public boolean checkDuplication(PayTable entity) {
+		QPayTable qEntity = QPayTable.payTable;
+		
+		return this.repository.exists(
+				qEntity.effectiveDate.eq(entity.getEffectiveDate())
+			.and(qEntity.occupationCode.eq(entity.getOccupationCode()))
+			.and(qEntity.jobGradeCode.eq(entity.getJobGradeCode()))
+			.and(qEntity.payStepCode.eq(entity.getPayStepCode()))
+				);
+			
 	}
 
 }

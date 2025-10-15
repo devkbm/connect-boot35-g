@@ -23,7 +23,7 @@ public class PayTableDeleteController {
 	@DeleteMapping("/api/hrm/paytable/{id}")
 	public ResponseEntity<?> delete(@PathVariable String id) {
 								
-		useCase.delete(id); 
+		useCase.delete(Long.parseLong(id)); 
 		
 		return toOne(null, MessageUtil.getDeleteMessage(1));
 	}

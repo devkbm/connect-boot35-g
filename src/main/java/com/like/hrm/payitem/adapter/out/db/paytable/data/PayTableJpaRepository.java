@@ -5,6 +5,6 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 import com.like.hrm.payitem.domain.PayTable;
 
-public interface PayTableJpaRepository extends JpaRepository<PayTable, String>, QuerydslPredicateExecutor<PayTable> {
+public interface PayTableJpaRepository extends JpaRepository<PayTable, Long>, QuerydslPredicateExecutor<PayTable> {
 
 }

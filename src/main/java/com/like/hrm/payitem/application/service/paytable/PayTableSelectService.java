@@ -17,7 +17,7 @@ public class PayTableSelectService implements PayTableSelectUseCase {
 	}
 		
 	@Override
-	public PayTableSaveDTO select(String id) {		
+	public PayTableSaveDTO select(Long id) {		
 		return PayTableSaveDTOMapper.toDTO(this.dbPort.select(id).orElse(null));
 	}
 

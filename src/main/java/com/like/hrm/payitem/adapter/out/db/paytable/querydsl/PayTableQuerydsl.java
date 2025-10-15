@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.like.hrm.payitem.application.port.in.paytable.query.PayTableQueryDTO;
 import com.like.hrm.payitem.application.port.in.paytable.query.PayTableQueryResultDTO;
 import com.like.hrm.payitem.domain.QPayTable;
-
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
@@ -22,12 +21,12 @@ public class PayTableQuerydsl {
 		this.queryFactory = queryFactory;
 	}
 	
-	List<PayTableQueryResultDTO> query(PayTableQueryDTO dto) {
+	public List<PayTableQueryResultDTO> query(PayTableQueryDTO dto) {
 		return this.queryFactory
 				.select(
 					Projections.fields(
 						PayTableQueryResultDTO.class,
-						qPayTable.id,
+						qPayTable.id.stringValue().as("id"),
 						qPayTable.companyCode,
 						qPayTable.payItemCode,
 						qPayTable.payItemCode.as("payItemName"),

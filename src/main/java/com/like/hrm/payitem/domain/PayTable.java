@@ -2,7 +2,6 @@ package com.like.hrm.payitem.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,6 +14,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.like.core.jpa.domain.AbstractAuditEntity;
 
+import io.hypersistence.utils.hibernate.id.Tsid;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,8 +28,9 @@ import lombok.NoArgsConstructor;
 public class PayTable extends AbstractAuditEntity {
 	
 	@Id
-	@Column(name="PAY_ITEM_NAME")	
-	String id;
+	@Tsid
+	@Column(name="PAY_TABLE_ID")	
+	Long id;
 	
 	@Column(name="ORG_CD")
 	String companyCode;
@@ -71,8 +72,7 @@ public class PayTable extends AbstractAuditEntity {
 			BigDecimal wageAmount,
 			Boolean isEnable,
 			String comment
-			)	{
-		this.id = companyCode + payItemCode + effectiveDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")) + occupationCode + jobGradeCode + payStepCode;
+			)	{		
 		this.companyCode = companyCode;
 		this.payItemCode = payItemCode;
 		this.effectiveDate = effectiveDate;

@@ -4,5 +4,5 @@ import com.like.hrm.payitem.application.port.in.paytable.save.PayTableSaveDTO;
 
 public interface PayTableSelectUseCase {
 
-	PayTableSaveDTO select(String id);
+	PayTableSaveDTO select(Long id);
 }
