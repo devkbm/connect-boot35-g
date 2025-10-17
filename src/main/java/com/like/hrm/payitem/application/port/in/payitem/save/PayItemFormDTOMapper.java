@@ -12,7 +12,8 @@ public class PayItemFormDTOMapper {
 		return PayItemFormDTO
 				.builder()
 				.companyCode(entity.getId().getCompanyCode())
-				.itemCode(entity.getId().getItemCode())
+				.payItemCode(entity.getId().getPayItemCode())
+				.payItemName(entity.getPayItemName())
 				.type(entity.getType())
 				.usePayTable(entity.getUsePayTable())
 				.seq(entity.getSeq())
@@ -23,8 +24,8 @@ public class PayItemFormDTOMapper {
 	public static PayItem newEntity(PayItemFormDTO dto) {
 		
 		return new PayItem(
-				new PayItemId(dto.companyCode(), dto.itemCode()),
-				dto.itemName(),
+				new PayItemId(dto.companyCode(), dto.payItemCode()),
+				dto.payItemName(),
 				dto.type(),
 				dto.usePayTable(),
 				dto.seq(),
@@ -34,7 +35,7 @@ public class PayItemFormDTOMapper {
 	
 	public static PayItem modifyEntity(PayItem entity, PayItemFormDTO dto) {
 		entity.modify(
-				dto.itemName(), 
+				dto.payItemName(), 
 				dto.type(),
 				dto.usePayTable(),
 				dto.seq(),

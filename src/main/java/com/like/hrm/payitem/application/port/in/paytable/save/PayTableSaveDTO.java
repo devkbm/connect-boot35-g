@@ -7,6 +7,7 @@ import lombok.Builder;
 
 @Builder
 public record PayTableSaveDTO(
+		String clientAppUrl,
 		String id,
 		String companyCode,
 		String payItemCode,

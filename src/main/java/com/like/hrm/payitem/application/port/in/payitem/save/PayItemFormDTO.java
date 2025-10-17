@@ -4,9 +4,10 @@ import lombok.Builder;
 
 @Builder
 public record PayItemFormDTO(
+		String clientAppUrl,
 		String companyCode,
-		String itemCode,
-		String itemName,
+		String payItemCode,
+		String payItemName,
 		String type,
 		Boolean usePayTable,
 		Integer seq,

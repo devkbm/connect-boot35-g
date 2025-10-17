@@ -10,7 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@EqualsAndHashCode(of = {"companyCode","itemCode"})
+@EqualsAndHashCode(of = {"companyCode","payItemCode"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Embeddable
 public class PayItemId implements Serializable {
@@ -21,10 +21,10 @@ public class PayItemId implements Serializable {
 	String companyCode;
 	
 	@Column(name="PAY_ITEM_CODE")
-	String itemCode;
+	String payItemCode;
 	
-	public PayItemId(String companyCode, String itemCode) {
+	public PayItemId(String companyCode, String payItemCode) {
 		this.companyCode = companyCode;
-		this.itemCode = itemCode;
+		this.payItemCode = payItemCode;
 	}
 }

@@ -25,7 +25,7 @@ public class PayItem extends AbstractAuditEntity {
 	PayItemId id;
 	
 	@Column(name="PAY_ITEM_NAME")
-	String itemName;
+	String payItemName;
 	
 	// 지급분, 공제분, 합산분
 	@Column(name="PAY_ITEM_TYPE")
@@ -43,14 +43,14 @@ public class PayItem extends AbstractAuditEntity {
 	
 	public PayItem(
 			PayItemId id,
-			String itemName,
+			String payItemName,
 			String type,
 			Boolean usePayTable,
 			Integer seq,
 			String comment
 			) {		
 		this.id = id;
-		this.itemName = itemName;
+		this.payItemName = payItemName;
 		this.type = type;
 		this.seq = seq;
 		this.comment = comment;
@@ -58,13 +58,13 @@ public class PayItem extends AbstractAuditEntity {
 	}
 	
 	public void modify(
-			String itemName,
+			String payItemName,
 			String type,
 			Boolean usePayTable,
 			Integer seq,
 			String comment
 			) {
-		this.itemName = itemName;
+		this.payItemName = payItemName;
 		this.type = type;
 		this.seq = seq;
 		this.comment = comment;

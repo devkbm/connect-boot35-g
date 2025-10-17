@@ -6,8 +6,8 @@ import lombok.Data;
 public class PayItemQueryResultDTO {
 
 	String companyCode;
-	String itemCode;
-	String itemName;
+	String payItemCode;
+	String payItemName;
 	String type;
 	Boolean usePayTable;
 	Integer seq;

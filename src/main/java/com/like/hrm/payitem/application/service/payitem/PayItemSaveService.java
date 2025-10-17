@@ -20,7 +20,7 @@ public class PayItemSaveService implements PayItemSaveUseCase {
 	
 	@Override
 	public void save(PayItemFormDTO dto) {
-		PayItem entity = this.dbPort.select(new PayItemId(dto.companyCode(), dto.itemCode())).orElse(null);
+		PayItem entity = this.dbPort.select(new PayItemId(dto.companyCode(), dto.payItemCode())).orElse(null);
 		
 		if (entity == null) {
 			entity = PayItemFormDTOMapper.newEntity(dto);

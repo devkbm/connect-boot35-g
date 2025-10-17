@@ -27,8 +27,8 @@ public class PayItemQuerydsl {
 					Projections.fields(
 						PayItemQueryResultDTO.class,						
 						qPayTime.id.companyCode.as("companyCode"),
-						qPayTime.id.itemCode.as("itemCode"),
-						qPayTime.itemName,
+						qPayTime.id.payItemCode.as("payItemCode"),
+						qPayTime.payItemName,
 						qPayTime.type,
 						qPayTime.usePayTable,
 						qPayTime.seq,						
