@@ -14,8 +14,11 @@ public class PayTableQueryResultDTO {
 	String payItemName;
 	LocalDate effectiveDate;
 	String occupationCode;
+	String occupationName;
 	String jobGradeCode;
+	String jobGradeName;
 	String payStepCode;
+	String payStepName;
 	BigDecimal wageAmount;
 	Boolean isEnable;
 	String comment;

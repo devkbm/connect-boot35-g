@@ -13,7 +13,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 @Repository
 public class PayItemQuerydsl {
 
-	final QPayItem qPayTime = QPayItem.payItem;
+	final QPayItem qPayItem = QPayItem.payItem;
 	
 	JPAQueryFactory queryFactory;
 	
@@ -26,16 +26,16 @@ public class PayItemQuerydsl {
 				.select(
 					Projections.fields(
 						PayItemQueryResultDTO.class,						
-						qPayTime.id.companyCode.as("companyCode"),
-						qPayTime.id.payItemCode.as("payItemCode"),
-						qPayTime.payItemName,
-						qPayTime.type,
-						qPayTime.usePayTable,
-						qPayTime.seq,						
-						qPayTime.comment							
+						qPayItem.id.companyCode.as("companyCode"),
+						qPayItem.id.payItemCode.as("payItemCode"),
+						qPayItem.payItemName,
+						qPayItem.type,
+						qPayItem.usePayTable,
+						qPayItem.seq,						
+						qPayItem.comment							
 					)
 				)
-				.from(qPayTime)
+				.from(qPayItem)
 				.fetch();	
 	}
 
