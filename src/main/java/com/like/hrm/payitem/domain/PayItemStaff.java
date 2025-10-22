@@ -46,7 +46,7 @@ public class PayItemStaff extends AbstractAuditEntity {
 	BigDecimal wageAmount;
 	
 	@Column(name="CMT")
-	String comment;
+	String comment;	
 	
 	public PayItemStaff(
 			String companyCode,

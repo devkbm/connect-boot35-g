@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.like.hrm.payitem.adapter.out.db.payitemstaff.data.PayItemStaffJpaRepository;
 import com.like.hrm.payitem.application.port.out.PayItemStaffCommandDbPort;
 import com.like.hrm.payitem.domain.PayItemStaff;
+import com.like.hrm.payitem.domain.QPayItemStaff;
 
 @Repository
 public class PayItemStaffCommandDbAdapter implements PayItemStaffCommandDbPort {
@@ -19,26 +20,28 @@ public class PayItemStaffCommandDbAdapter implements PayItemStaffCommandDbPort {
 	
 	@Override
 	public boolean checkDuplication(PayItemStaff entity) {
-		// TODO Auto-generated method stub
-		return false;
+		QPayItemStaff qEntity = QPayItemStaff.payItemStaff;
+		
+		return this.repository.exists(
+				qEntity.companyCode.eq(entity.getCompanyCode())
+				.and(qEntity.staffNo.eq(entity.getStaffNo()))
+				.and(qEntity.payItemCode.eq(entity.getPayItemCode()))				
+				);
 	}
 
 	@Override
 	public Optional<PayItemStaff> select(Long id) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
+		return this.repository.findById(id);	
 	}
 
 	@Override
 	public void save(PayItemStaff entity) {
-		// TODO Auto-generated method stub
-		
+		this.repository.save(entity);
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		
+		this.repository.deleteById(id);
 	}
 
 }

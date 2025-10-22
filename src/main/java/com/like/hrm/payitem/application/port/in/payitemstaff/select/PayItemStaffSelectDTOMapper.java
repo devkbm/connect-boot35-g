@@ -1,5 +1,7 @@
 package com.like.hrm.payitem.application.port.in.payitemstaff.select;
 
+import com.like.hrm.payitem.domain.PayItemStaff;
+
 public class PayItemStaffSelectDTOMapper {
 
 	public static PayItemStaffSelectDTO toDTO(PayItemStaff entity) {

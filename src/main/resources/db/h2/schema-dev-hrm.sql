@@ -391,7 +391,7 @@ CREATE TABLE HRMPAYITEMSTAFF (
   	TO_DT   	          	DATETIME  			NULL    	,
   	WAGE_AMOUNT				INT					NULL		,  	
   	CMT						VARCHAR(4000)		NULL		,
-	constraint pk_hrmpayitemstaff primary key(PAY_TABLE_ID)
+	constraint pk_hrmpayitemstaff primary key(PAY_ITEM_STAFF_ID)
 );
-COMMENT ON TABLE HRMPAYTABLE IS '급여항목직원';
+COMMENT ON TABLE HRMPAYITEMSTAFF IS '급여항목직원';
 

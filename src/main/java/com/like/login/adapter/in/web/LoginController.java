@@ -89,4 +89,10 @@ public class LoginController {
 		return session == null || request.isRequestedSessionIdValid() ? true : false;
 	}
 	
+	@GetMapping("/test/1")
+	public String logout2(HttpServletRequest request, HttpSession session) {			
+						         		 							                   			
+		return "테스트";
+	}
+	
 }

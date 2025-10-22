@@ -59,6 +59,7 @@ public class WebSecurityConfigLocalTest<S extends Session> {
 			.authorizeHttpRequests(authorize -> 
 				authorize.requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
 						.requestMatchers("/api/system/user/login").permitAll()			// 로그인 API
+						.requestMatchers("/test/**").permitAll()				// 테스트 API
 						.requestMatchers("/h2/**").permitAll()					// h2-console 
 						.anyRequest().authenticated()
 						//.anyRequest().permitAll()
