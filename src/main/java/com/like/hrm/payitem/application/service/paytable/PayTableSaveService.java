@@ -33,7 +33,7 @@ public class PayTableSaveService implements PayTableSaveUseCase {
 			}
 			
 		} else {
-			entity = this.dbPort.select(Long.parseLong(dto.id())).orElse(null);
+			entity = this.dbPort.select(Long.parseLong(id)).orElse(null);
 			
 			entity = PayTableSaveDTOMapper.modify(entity, dto);
 		}
