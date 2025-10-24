@@ -1,29 +1,28 @@
-package com.like.hrm.payitem.adapter.in.web.payitem;
+package com.like.hrm.payitem.adapter.in.web.payitemstaff;
 
 import static com.like.core.web.util.ResponseEntityUtil.toOne;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.like.core.message.MessageUtil;
-import com.like.hrm.payitem.application.port.in.payitem.delete.PayItemDeleteUseCase;
+import com.like.hrm.payitem.application.port.in.payitemstaff.delete.PayItemStaffDeleteUseCase;
 
 @RestController
-public class PayItemDeleteController {
+public class PayItemStaffDeleteController {
 
-	PayItemDeleteUseCase useCase;
+	PayItemStaffDeleteUseCase useCase;
 	
-	PayItemDeleteController(PayItemDeleteUseCase useCase) {
+	PayItemStaffDeleteController(PayItemStaffDeleteUseCase useCase) {
 		this.useCase = useCase;
 	}
 	
 	@DeleteMapping("/api/hrm/payitem/{id}")
-	public ResponseEntity<?> delete(@RequestParam String companyCode, @PathVariable String id) {
+	public ResponseEntity<?> delete(@PathVariable String id) {
 								
-		useCase.delete(companyCode, id); 
+		useCase.delete(Long.parseLong(id)); 
 		
 		return toOne(null, MessageUtil.getDeleteMessage(1));
 	}

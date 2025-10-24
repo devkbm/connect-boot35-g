@@ -2,7 +2,7 @@ package com.like.hrm.payitem.application.service.payitem;
 
 import org.springframework.stereotype.Service;
 
-import com.like.hrm.payitem.application.port.in.payitem.PayItemDeleteUseCase;
+import com.like.hrm.payitem.application.port.in.payitem.delete.PayItemDeleteUseCase;
 import com.like.hrm.payitem.application.port.out.PayItemCommandDbPort;
 import com.like.hrm.payitem.domain.PayItemId;
 
