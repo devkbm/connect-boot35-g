@@ -22,7 +22,7 @@ public class PayItemStaffSaveController {
 		this.useCase = useCase;
 	}
 	
-	@PostMapping("/api/hrm/payitem")
+	@PostMapping("/api/hrm/payitemstaff")
 	public ResponseEntity<?> save(@RequestBody @Valid PayItemStaffSaveDTO dto) {			
 														
 		useCase.save(dto);

@@ -19,7 +19,7 @@ public class PayItemStaffDeleteController {
 		this.useCase = useCase;
 	}
 	
-	@DeleteMapping("/api/hrm/payitem/{id}")
+	@DeleteMapping("/api/hrm/payitemstaff/{id}")
 	public ResponseEntity<?> delete(@PathVariable String id) {
 								
 		useCase.delete(Long.parseLong(id)); 

@@ -33,7 +33,7 @@ public class PayItemStaff extends AbstractAuditEntity {
 	@Column(name="ORG_CD")
 	String companyCode;
 
-	@Column(name="STF_NO")
+	@Column(name="STAFF_NO")
 	String staffNo;
 	
 	@Column(name="PAY_ITEM_CODE")
