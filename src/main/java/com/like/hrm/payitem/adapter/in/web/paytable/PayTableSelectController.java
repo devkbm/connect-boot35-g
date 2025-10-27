@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.like.core.message.MessageUtil;
-import com.like.hrm.payitem.application.port.in.paytable.save.PayTableSaveDTO;
+import com.like.hrm.payitem.application.port.in.paytable.select.PayTableSelectDTO;
 import com.like.hrm.payitem.application.port.in.paytable.select.PayTableSelectUseCase;
 
 @RestController
@@ -23,7 +23,7 @@ public class PayTableSelectController {
 	@GetMapping("/api/hrm/paytable/{id}")
 	public ResponseEntity<?> select(@PathVariable String id) {
 								
-		PayTableSaveDTO dto = useCase.select(Long.parseLong(id)); 
+		PayTableSelectDTO dto = useCase.select(Long.parseLong(id)); 
 		
 		return toOne(dto, MessageUtil.getQueryMessage(dto == null ? 0 : 1));
 	}

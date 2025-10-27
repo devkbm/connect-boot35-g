@@ -3,13 +3,13 @@ package com.like.hrm.payitem.application.port.in.payitem.save;
 import com.like.hrm.payitem.domain.PayItem;
 import com.like.hrm.payitem.domain.PayItemId;
 
-public class PayItemFormDTOMapper {
+public class PayItemSaveDTOMapper {
 
-	public static PayItemFormDTO toDTO(PayItem entity) {
+	public static PayItemSaveDTO toDTO(PayItem entity) {
 		
 		if (entity == null) return null;
 		
-		return PayItemFormDTO
+		return PayItemSaveDTO
 				.builder()
 				.companyCode(entity.getId().getCompanyCode())
 				.payItemCode(entity.getId().getPayItemCode())
@@ -21,7 +21,7 @@ public class PayItemFormDTOMapper {
 				.build(); 		
 	}
 	
-	public static PayItem newEntity(PayItemFormDTO dto) {
+	public static PayItem newEntity(PayItemSaveDTO dto) {
 		
 		return new PayItem(
 				new PayItemId(dto.companyCode(), dto.payItemCode()),
@@ -33,7 +33,7 @@ public class PayItemFormDTOMapper {
 				);
 	}
 	
-	public static PayItem modifyEntity(PayItem entity, PayItemFormDTO dto) {
+	public static PayItem modifyEntity(PayItem entity, PayItemSaveDTO dto) {
 		entity.modify(
 				dto.payItemName(), 
 				dto.type(),

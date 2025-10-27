@@ -2,8 +2,8 @@ package com.like.hrm.payitem.application.service.payitem;
 
 import org.springframework.stereotype.Service;
 
-import com.like.hrm.payitem.application.port.in.payitem.save.PayItemFormDTO;
-import com.like.hrm.payitem.application.port.in.payitem.save.PayItemFormDTOMapper;
+import com.like.hrm.payitem.application.port.in.payitem.select.PayItemSelectDTO;
+import com.like.hrm.payitem.application.port.in.payitem.select.PayItemSelectDTOMapper;
 import com.like.hrm.payitem.application.port.in.payitem.select.PayItemSelectUseCase;
 import com.like.hrm.payitem.application.port.out.PayItemCommandDbPort;
 import com.like.hrm.payitem.domain.PayItemId;
@@ -18,8 +18,8 @@ public class PayItemSelectService implements PayItemSelectUseCase {
 	}
 
 	@Override
-	public PayItemFormDTO select(String companyCode, String itemCode) {		
-		return PayItemFormDTOMapper.toDTO(
+	public PayItemSelectDTO select(String companyCode, String itemCode) {		
+		return PayItemSelectDTOMapper.toDTO(
 				this.dbPort.select(new PayItemId(companyCode, itemCode)).orElse(null)
 				);
 	}

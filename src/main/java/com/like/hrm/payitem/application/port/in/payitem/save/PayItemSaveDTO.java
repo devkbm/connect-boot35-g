@@ -3,7 +3,7 @@ package com.like.hrm.payitem.application.port.in.payitem.save;
 import lombok.Builder;
 
 @Builder
-public record PayItemFormDTO(
+public record PayItemSaveDTO(
 		String clientAppUrl,
 		String companyCode,
 		String payItemCode,

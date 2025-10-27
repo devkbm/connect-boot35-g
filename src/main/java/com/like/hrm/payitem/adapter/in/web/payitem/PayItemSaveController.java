@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.like.core.message.MessageUtil;
-import com.like.hrm.payitem.application.port.in.payitem.save.PayItemFormDTO;
+import com.like.hrm.payitem.application.port.in.payitem.save.PayItemSaveDTO;
 import com.like.hrm.payitem.application.port.in.payitem.save.PayItemSaveUseCase;
 
 import jakarta.validation.Valid;
@@ -23,7 +23,7 @@ public class PayItemSaveController {
 	}
 	
 	@PostMapping("/api/hrm/payitem")
-	public ResponseEntity<?> save(@RequestBody @Valid PayItemFormDTO dto) {			
+	public ResponseEntity<?> save(@RequestBody @Valid PayItemSaveDTO dto) {			
 														
 		useCase.save(dto);
 											 				
