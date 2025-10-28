@@ -1,12 +1,12 @@
-package com.like.hrm.staff.application.dto.partner;
+package com.like.hrm.staff.application.port.in.partner.save;
 
 import com.like.hrm.staff.domain.partner.PartnerCompanyStaff;
 import com.like.hrm.staff.domain.staff.StaffName;
 import com.like.hrm.staff.domain.staff.StaffNoCreateStrategy;
 
-public class PartnerCompanyStaffFormDTOMapper {
+public class PartnerCompanyStaffSaveDTOMapper {
 
-	public static PartnerCompanyStaff create(PartnerCompanyStaffFormDTO dto) {
+	public static PartnerCompanyStaff create(PartnerCompanyStaffSaveDTO dto) {
 		
 		StaffNoCreateStrategy strategy = () -> dto.staffNo();
 		
@@ -24,7 +24,7 @@ public class PartnerCompanyStaffFormDTOMapper {
 				);
 	}
 	
-	public static void modify(PartnerCompanyStaff entity, PartnerCompanyStaffFormDTO dto) {
+	public static void modify(PartnerCompanyStaff entity, PartnerCompanyStaffSaveDTO dto) {
 		entity.modify(
 				new StaffName(dto.name(), dto.nameEng(), dto.nameEng()), 
 				dto.gender(),
@@ -37,10 +37,10 @@ public class PartnerCompanyStaffFormDTOMapper {
 				);
 	}
 	
-	public static PartnerCompanyStaffFormDTO toDTO(PartnerCompanyStaff entity) {
+	public static PartnerCompanyStaffSaveDTO toDTO(PartnerCompanyStaff entity) {
 		if (entity == null) return null;
 		
-		return PartnerCompanyStaffFormDTO
+		return PartnerCompanyStaffSaveDTO
 				.builder()
 				.companyCode(entity.getId().companyCode())
 				.staffNo(entity.getId().staffNo())

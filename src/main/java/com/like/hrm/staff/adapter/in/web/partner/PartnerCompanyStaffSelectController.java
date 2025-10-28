@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.like.core.message.MessageUtil;
-import com.like.hrm.staff.application.dto.partner.PartnerCompanyStaffFormDTO;
-import com.like.hrm.staff.application.port.in.partner.PartnerCompanyStaffSelectUseCase;
+import com.like.hrm.staff.application.port.in.partner.select.PartnerCompanyStaffSelectDTO;
+import com.like.hrm.staff.application.port.in.partner.select.PartnerCompanyStaffSelectUseCase;
 
 @RestController
 public class PartnerCompanyStaffSelectController {
@@ -24,7 +24,7 @@ public class PartnerCompanyStaffSelectController {
 	@GetMapping("/api/hrm/partnerstaff/{id}")
 	public ResponseEntity<?> select(@RequestParam String companyCode, @PathVariable String id) {
 								
-		PartnerCompanyStaffFormDTO dto = useCase.select(companyCode, id); 
+		PartnerCompanyStaffSelectDTO dto = useCase.select(companyCode, id); 
 		
 		return toOne(dto, MessageUtil.getQueryMessage(dto == null ? 0 : 1));
 	}		
