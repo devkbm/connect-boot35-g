@@ -23,9 +23,7 @@ public class PayItemQuerydsl {
 		
 	public List<PayItemQueryResultDTO> query(PayItemQueryDTO dto) {
 		return queryFactory
-				.select(
-					Projections.fields(
-						PayItemQueryResultDTO.class,						
+				.select(Projections.fields(PayItemQueryResultDTO.class,						
 						qPayItem.id.companyCode.as("companyCode"),
 						qPayItem.id.payItemCode.as("payItemCode"),
 						qPayItem.payItemName,
@@ -33,7 +31,7 @@ public class PayItemQuerydsl {
 						qPayItem.usePayTable,
 						qPayItem.seq,						
 						qPayItem.comment							
-					)
+						)
 				)
 				.from(qPayItem)
 				.fetch();	

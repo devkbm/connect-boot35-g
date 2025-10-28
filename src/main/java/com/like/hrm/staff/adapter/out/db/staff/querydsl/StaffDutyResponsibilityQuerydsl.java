@@ -25,19 +25,18 @@ public class StaffDutyResponsibilityQuerydsl {
 		QHrmCode hrmCode = QHrmCode.hrmCode;
 		
 		return queryFactory
-				.select(
-						Projections.fields(StaffDutyResponsibilityQueryResultDTO.class, 
-								qDuty.id.companyCode,
-								qDuty.id.staffNo,
-								qDuty.id.staffNo.as("staffName"),
-								qDuty.id.seq,								
-								qDuty.dutyResponsibilityCode,
-								hrmCode.codeName.as("dutyResponsibilityName"),
-								qDuty.fromDate,
-								qDuty.toDate,
-								qDuty.isPayApply
-							)
-					)
+				.select(Projections.fields(StaffDutyResponsibilityQueryResultDTO.class, 
+						qDuty.id.companyCode,
+						qDuty.id.staffNo,
+						qDuty.id.staffNo.as("staffName"),
+						qDuty.id.seq,								
+						qDuty.dutyResponsibilityCode,
+						hrmCode.codeName.as("dutyResponsibilityName"),
+						qDuty.fromDate,
+						qDuty.toDate,
+						qDuty.isPayApply
+						)
+				)
 				.from(qDuty)
 					.leftJoin(hrmCode)
 					.on(hrmCode.id.typeId.eq("HR0008")

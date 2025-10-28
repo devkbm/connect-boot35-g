@@ -31,9 +31,7 @@ public class PayTableQuerydsl {
 		QHrmCode payStepCode = new QHrmCode("payStepCode");
 		
 		return this.queryFactory
-				.select(
-					Projections.fields(
-						PayTableQueryResultDTO.class,
+				.select(Projections.fields(PayTableQueryResultDTO.class,
 						qPayTable.id.stringValue().as("id"),
 						qPayTable.companyCode,
 						qPayTable.payItemCode,

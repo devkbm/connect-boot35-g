@@ -28,16 +28,14 @@ public class RoleQueryDbAdpater implements RoleQueryDbPort {
 	public List<RoleQueryResultDTO> getRoleList(RoleQueryDTO dto) {		
 		
 		return queryFactory
-				.select(
-					Projections.fields(
-							RoleQueryResultDTO.class, 
-							qEntity.modifiedAppUrl.as("clientAppUrl"),
-							qEntity.id.companyCode.as("companyCode"),
-							qEntity.id.roleCode.as("roleCode"),
-							qEntity.roleName,
-							qEntity.description,
-							qEntity.menuGroupCode
-							)
+				.select(Projections.fields(RoleQueryResultDTO.class,
+						qEntity.modifiedAppUrl.as("clientAppUrl"),
+						qEntity.id.companyCode.as("companyCode"),
+						qEntity.id.roleCode.as("roleCode"),
+						qEntity.roleName,
+						qEntity.description,
+						qEntity.menuGroupCode
+						)
 				)
 				.from(qEntity)
 				.where(toPredicate(dto))

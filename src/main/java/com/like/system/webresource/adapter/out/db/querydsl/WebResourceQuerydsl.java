@@ -23,14 +23,14 @@ public class WebResourceQuerydsl {
 	
 	public List<WebResourceQueryResultDTO> getList(WebResourceQueryDTO condition) {
 		return queryFactory
-				.select(
-					Projections.fields(WebResourceQueryResultDTO.class,							
-							qWebResource.id.as("resourceId"),
-							qWebResource.name.as("resourceName"),
-							qWebResource.type.as("resourceType"),
-							qWebResource.url,
-							qWebResource.description
-						))
+				.select(Projections.fields(WebResourceQueryResultDTO.class,							
+						qWebResource.id.as("resourceId"),
+						qWebResource.name.as("resourceName"),
+						qWebResource.type.as("resourceType"),
+						qWebResource.url,
+						qWebResource.description
+						)
+				)
 				.from(qWebResource)
 				.where(condition.getBooleanBuilder())
 				.fetch();
@@ -40,14 +40,14 @@ public class WebResourceQuerydsl {
 	
 	public WebResourceQueryResultDTO get(WebResourceQueryDTO condition) {
 		return queryFactory
-				.select(
-					Projections.fields(WebResourceQueryResultDTO.class,							
-							qWebResource.id.as("resourceId"),
-							qWebResource.name.as("resourceName"),
-							qWebResource.type.as("resourceType"),
-							qWebResource.url,
-							qWebResource.description
-						))
+				.select(Projections.fields(WebResourceQueryResultDTO.class,							
+						qWebResource.id.as("resourceId"),
+						qWebResource.name.as("resourceName"),
+						qWebResource.type.as("resourceType"),
+						qWebResource.url,
+						qWebResource.description
+						)
+				)
 				.from(qWebResource)				
 				.fetchFirst();
 				           

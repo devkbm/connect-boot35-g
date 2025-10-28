@@ -26,8 +26,7 @@ public class WorkCalendarQueryDbAdapter implements WorkCalendarQueryDbPort {
 	@Override
 	public List<WorkCalendarQueryResultDTO> getWorkGroupList(WorkCalendarQueryDTO searchCondition) {
 		return queryFactory
-				.select(Projections.fields(
-						WorkCalendarQueryResultDTO.class,
+				.select(Projections.fields(WorkCalendarQueryResultDTO.class,
 						//Expressions.asString(qWorkCalendar.id.stringValue()).as("id"),
 						qWorkCalendar.id.stringValue().as("id"),
 						qWorkCalendar.name,
@@ -43,8 +42,7 @@ public class WorkCalendarQueryDbAdapter implements WorkCalendarQueryDbPort {
 	public List<WorkCalendarQueryResultDTO> getWorkGroupList(String userId) {
 
 		return queryFactory
-				.select(Projections.fields(
-						WorkCalendarQueryResultDTO.class,
+				.select(Projections.fields(WorkCalendarQueryResultDTO.class,
 						//Expressions.asString(qWorkCalendar.id.stringValue()).as("id"),
 						qWorkCalendar.id.stringValue().as("id"),
 						qWorkCalendar.name,

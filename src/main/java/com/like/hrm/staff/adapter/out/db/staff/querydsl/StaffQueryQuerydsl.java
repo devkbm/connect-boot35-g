@@ -27,8 +27,7 @@ public class StaffQueryQuerydsl {
 		
 	public List<StaffQueryResultDTO> getStaffList(StaffQueryDTO dto) {
 		return queryFactory
-				.select(Projections.fields(
-						StaffQueryResultDTO.class, 
+				.select(Projections.fields(StaffQueryResultDTO.class, 
 						qStaff.id.companyCode,
 						qStaff.id.staffNo,
 						qStaff.name.name,

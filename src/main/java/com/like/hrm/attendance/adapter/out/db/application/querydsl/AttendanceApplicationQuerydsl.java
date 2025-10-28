@@ -31,17 +31,16 @@ public class AttendanceApplicationQuerydsl {
 		return null;
 		/*
 		return queryFactory
-				.select(						
-					Projections.fields(AttendanceApplicationQueryResultDTO.class,
-							qApplication.appId,
-							qApplication.staffNo,
-							qStaff.name.name.as("staffName"),
-							qApplication.dutyCode,
-							hrmCode.codeName.as("dutyName"),
-							qApplication.dutyReason,
-							qApplication.period.from.as("fromDate"),
-							//qApplication.period.to.as("toDate"),																																							
-							Expressions.dateTemplate(LocalDate.class, "DATEADD(DAY, {0}, {1})", Expressions.constant(1), qApplication.period.to).as("toDate") // 
+				.select(Projections.fields(AttendanceApplicationQueryResultDTO.class,
+						qApplication.appId,
+						qApplication.staffNo,
+						qStaff.name.name.as("staffName"),
+						qApplication.dutyCode,
+						hrmCode.codeName.as("dutyName"),
+						qApplication.dutyReason,
+						qApplication.period.from.as("fromDate"),
+						//qApplication.period.to.as("toDate"),																																							
+						Expressions.dateTemplate(LocalDate.class, "DATEADD(DAY, {0}, {1})", Expressions.constant(1), qApplication.period.to).as("toDate") // 
 					)					
 				)
 				.from(qApplication)

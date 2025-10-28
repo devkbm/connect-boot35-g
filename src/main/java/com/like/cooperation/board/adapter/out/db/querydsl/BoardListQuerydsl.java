@@ -23,8 +23,7 @@ public class BoardListQuerydsl {
 	public List<BoardQueryResultDTO> selectList(BoardQueryDTO dto) {
  		
 		return queryFactory				
-				.select(Projections.fields(
-						BoardQueryResultDTO.class,
+				.select(Projections.fields(BoardQueryResultDTO.class,
 						qBoard.modifiedAppUrl.as("clientAppUrl"),
 						qBoard.boardId,
 						qBoard.parent.boardId.as("boardParentId"),

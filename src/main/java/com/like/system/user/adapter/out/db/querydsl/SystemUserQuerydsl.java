@@ -27,11 +27,9 @@ public class SystemUserQuerydsl {
 	public List<SystemUserQueryResultDTO> selectList2(SystemUserQueryDTO dto) {
 									
 		return this.queryFactory
-				.select(
-					Projections.fields(
-							SystemUserQueryResultDTO.class,
-							qSystemUser.id.userId,
-							qSystemUserCompanyRole.id.roleCode.as("roleList")							
+				.select(Projections.fields(SystemUserQueryResultDTO.class,
+						qSystemUser.id.userId,
+						qSystemUserCompanyRole.id.roleCode.as("roleList")							
 					)					
 				)
 				.from(qSystemUser)

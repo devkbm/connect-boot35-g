@@ -1,4 +1,4 @@
-package com.like.system.menu_role.adapter.out.db.menu_role.querydsl;
+package com.like.system.menu_role.adapter.out.db.menu_role;
 
 import java.util.List;
 

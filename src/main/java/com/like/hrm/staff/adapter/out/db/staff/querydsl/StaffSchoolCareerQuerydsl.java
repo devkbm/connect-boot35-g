@@ -28,33 +28,33 @@ public class StaffSchoolCareerQuerydsl {
 		QHrmCode career = new QHrmCode("career");;	// HR0009
 							
 		return queryFactory
-				.select(
-						Projections.fields(StaffSchoolCareerQueryResultDTO.class, 
-							qCareer.id.companyCode,
-							qCareer.id.staffNo,
-							qCareer.id.staffNo.as("staffName"),
-							qCareer.id.seq,							
-							qCareer.schoolCareerType,
-							career.codeName.as("schoolCareerTypeName"),
-							qCareer.schoolCode,
-							school.codeName.as("schoolCodeName"),
-							qCareer.period.from.as("fromDate"),
-							qCareer.period.to.as("toDate"),
-							qCareer.majorName,
-							qCareer.pluralMajorName,
-							qCareer.location,
-							qCareer.lessonYear,
-							qCareer.comment
-					))
+				.select(Projections.fields(StaffSchoolCareerQueryResultDTO.class,
+						qCareer.id.companyCode,
+						qCareer.id.staffNo,
+						qCareer.id.staffNo.as("staffName"),
+						qCareer.id.seq,							
+						qCareer.schoolCareerType,
+						career.codeName.as("schoolCareerTypeName"),
+						qCareer.schoolCode,
+						school.codeName.as("schoolCodeName"),
+						qCareer.period.from.as("fromDate"),
+						qCareer.period.to.as("toDate"),
+						qCareer.majorName,
+						qCareer.pluralMajorName,
+						qCareer.location,
+						qCareer.lessonYear,
+						qCareer.comment
+					)
+				)
 				.from(qCareer)
-					.leftJoin(career)
+				.leftJoin(career)
 					.on(career.id.typeId.eq("HR0009")
 					.and(qCareer.schoolCareerType.eq(career.id.code)))
-					.leftJoin(school)
+				.leftJoin(school)
 					.on(school.id.typeId.eq("HR0010")
 					.and(qCareer.schoolCode.eq(school.id.code)))
 				.where(qCareer.id.companyCode.eq(companyCode)
-				  .and(qCareer.id.staffNo.eq(staffNo)))
+				.and(qCareer.id.staffNo.eq(staffNo)))
 				.fetch();				
 	}
 }

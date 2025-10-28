@@ -26,20 +26,20 @@ public class StaffFamilyQuerydsl {
 		QHrmCode hrmCode = QHrmCode.hrmCode;
 		
 		return queryFactory
-				.select(
-						Projections.fields(StaffFamilyQueryResultDTO.class, 
-							qFamily.id.companyCode,
-							qFamily.id.staffNo,
-							qFamily.id.staffNo.as("staffName"),
-							qFamily.id.seq,
-							qFamily.name.as("familyName"),
-							qFamily.residentRegistrationNumber.as("familyRRN"),
-							qFamily.relation.as("familyRelationCode"),
-							hrmCode.codeName.as("familyRelationName"),
-							qFamily.occupation,
-							qFamily.schoolCareerType,
-							qFamily.comment
-					))
+				.select(Projections.fields(StaffFamilyQueryResultDTO.class, 
+						qFamily.id.companyCode,
+						qFamily.id.staffNo,
+						qFamily.id.staffNo.as("staffName"),
+						qFamily.id.seq,
+						qFamily.name.as("familyName"),
+						qFamily.residentRegistrationNumber.as("familyRRN"),
+						qFamily.relation.as("familyRelationCode"),
+						hrmCode.codeName.as("familyRelationName"),
+						qFamily.occupation,
+						qFamily.schoolCareerType,
+						qFamily.comment
+					)
+				)
 				.from(qFamily)
 					.leftJoin(hrmCode)
 					.on(hrmCode.id.typeId.eq("HR0008")

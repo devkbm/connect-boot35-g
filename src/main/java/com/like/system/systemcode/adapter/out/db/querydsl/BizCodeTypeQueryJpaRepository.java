@@ -21,8 +21,7 @@ public class BizCodeTypeQueryJpaRepository {
 		
 	public List<BizCodeTypeQueryResultDTO> getList(String organizactionCode) {	
 		return queryFactory
-				.select(Projections.fields(
-						BizCodeTypeQueryResultDTO.class,
+				.select(Projections.fields(BizCodeTypeQueryResultDTO.class,
 						qBizCodeType.modifiedAppUrl.as("clientAppUrl"),
 						qBizCodeType.id.companyCode.as("companyCode"),
 						qBizCodeType.id.typeId,

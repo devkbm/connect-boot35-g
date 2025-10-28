@@ -23,9 +23,7 @@ public class TodoGroupQuerydsl {
 	public List<TodoGroupQueryResultDTO> select(String userId) {
 		
 		return this.queryFactory
-				.select(
-					Projections.fields(
-						TodoGroupQueryResultDTO.class,
+				.select(Projections.fields(TodoGroupQueryResultDTO.class,
 						qTodoGroup.groupId.stringValue().as("groupId"),						
 						qTodoGroup.todoGroupName
 					)					

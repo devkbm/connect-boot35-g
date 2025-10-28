@@ -29,8 +29,7 @@ public class PostSelectQuerydsl {
 				.as("editable");
 		
 		return queryFactory
-				.select(
-					Projections.fields(PostSelectDTO.class,
+				.select(Projections.fields(PostSelectDTO.class,
 						/*	
 						Expressions.asString(qPost.board.boardId.toString()).as("boardId"),
 						Expressions.asString(qPost.postId.toString()).as("postId"),

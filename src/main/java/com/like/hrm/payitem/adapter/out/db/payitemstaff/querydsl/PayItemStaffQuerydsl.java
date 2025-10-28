@@ -29,9 +29,7 @@ public class PayItemStaffQuerydsl {
 		QStaff qStaff = QStaff.staff;
 		
 		return queryFactory
-				.select(
-					Projections.fields(
-						PayItemStaffQueryResultDTO.class, 
+				.select(Projections.fields(PayItemStaffQueryResultDTO.class, 
 						qPayItemStaff.id.stringValue().as("id"),
 						qPayItemStaff.companyCode,
 						qPayItemStaff.staffNo,
@@ -42,7 +40,7 @@ public class PayItemStaffQuerydsl {
 						qPayItemStaff.priod.to.as("to"),
 						qPayItemStaff.wageAmount,
 						qPayItemStaff.comment
-					)
+						)
 				)
 				.from(qPayItemStaff)
 				.innerJoin(qStaff)

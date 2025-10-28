@@ -22,9 +22,7 @@ public class TodoQuerydsl {
 	
 	public List<TodoQueryResultDTO> select(Long todoGroupId) {
 		return this.queryFactory
-				.select(
-					Projections.fields(
-						TodoQueryResultDTO.class,
+				.select(Projections.fields(TodoQueryResultDTO.class,
 						qTodo.modifiedAppUrl.as("clientAppUrl"),						
 						qTodo.todoGroup.groupId.stringValue().as("groupId"),
 						qTodo.todoId.stringValue().as("todoId"),
@@ -38,6 +36,5 @@ public class TodoQuerydsl {
 				.where(qTodo.todoGroup.groupId.eq(todoGroupId))
 				.fetch();
 	}
-	
 	
 }

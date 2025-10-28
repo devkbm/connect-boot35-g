@@ -34,8 +34,7 @@ public class WorkCalendarEventQuerydsl {
 	
 	public List<WorkCalendarEventQueryResultDTO> getScheduleList(WorkCalendarEventQueryDTO searchCondition) {
 		return queryFactory
-				.select(Projections.fields(
-						WorkCalendarEventQueryResultDTO.class, 
+				.select(Projections.fields(WorkCalendarEventQueryResultDTO.class, 
 						qWorkCalendarEvent.id.stringValue().as("id"),
 						qWorkCalendarEvent.title.as("text"),
 						qWorkCalendar.color,
