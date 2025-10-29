@@ -11,15 +11,15 @@ import com.like.hrm.staff.application.port.out.staff.StaffAppointmentQueryDbPort
 @Repository
 public class StaffAppointmentQueryDbAdapter implements StaffAppointmentQueryDbPort {
 
-	StaffAppointmentQuerydsl query;
+	StaffAppointmentQuerydsl repository;
 	
-	StaffAppointmentQueryDbAdapter(StaffAppointmentQuerydsl query) {
-		this.query = query;
+	StaffAppointmentQueryDbAdapter(StaffAppointmentQuerydsl repository) {
+		this.repository = repository;
 	}
 	
 	@Override
 	public List<StaffAppointmentQueryResultDTO> select(String companyCode, String staffNo) {
-		return this.query.select(companyCode, staffNo);	
+		return this.repository.select(companyCode, staffNo);	
 	}	
 
 }

@@ -11,16 +11,16 @@ import com.like.system.menu_role.domain.menu_role.MenuRoleHierarchy;
 @Repository
 public class MenuRoleHierarchyDbAdapter implements MenuRoleHierarchySelectDbPort {
 
-	MenuRoleHierarchyQuerydsl query;
+	MenuRoleHierarchyQuerydsl repository;
 	
-	MenuRoleHierarchyDbAdapter(MenuRoleHierarchyQuerydsl query) {
-		this.query = query;		
+	MenuRoleHierarchyDbAdapter(MenuRoleHierarchyQuerydsl repository) {
+		this.repository = repository;		
 	}
 	
 	@Override
 	public List<MenuRoleHierarchy> select(String companyCode, String menuGroupCode, String roleCode) {
 								
-		return query.select(companyCode, menuGroupCode, roleCode);
+		return repository.select(companyCode, menuGroupCode, roleCode);
 	}
 
 }

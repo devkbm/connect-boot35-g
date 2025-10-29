@@ -12,15 +12,15 @@ import com.like.hrm.payitem.application.port.out.PayItemQueryDbPort;
 @Repository
 public class PayItemQueryDbAdapter implements PayItemQueryDbPort {
 
-	PayItemQuerydsl query;
+	PayItemQuerydsl repository;
 	
-	PayItemQueryDbAdapter(PayItemQuerydsl query) {
-		this.query = query;
+	PayItemQueryDbAdapter(PayItemQuerydsl repository) {
+		this.repository = repository;
 	}
 	
 	@Override
 	public List<PayItemQueryResultDTO> query(PayItemQueryDTO dto) {
-		return this.query.query(dto);		
+		return this.repository.query(dto);		
 	}
 
 }

@@ -14,21 +14,22 @@ import com.like.cooperation.board.domain.post.QPostAttachedFile;
 @Repository
 public class PostSelectDbAdapter implements PostSelectDbPort {
 
-	PostSelectQuerydsl query;
+	PostSelectQuerydsl repository;
 	PostAttachedFileRepository fileRepository;
 	
 	private final QPostAttachedFile qArticleAttachedFile = QPostAttachedFile.postAttachedFile;
 	
 	PostSelectDbAdapter(
-			PostSelectQuerydsl query, 
-			PostAttachedFileRepository fileRepository) {
-		this.query = query;
+			PostSelectQuerydsl repository, 
+			PostAttachedFileRepository fileRepository
+			) {
+		this.repository = repository;
 		this.fileRepository = fileRepository;		
 	}
 	
 	@Override
 	public PostSelectDTO get(String readerUserId, Long articleId) {
-		 PostSelectDTO dto = this.query.get(readerUserId, articleId);
+		 PostSelectDTO dto = this.repository.get(readerUserId, articleId);
 		 
 		 List<PostAttachedFile> files = this.fileRepository.findAll(qArticleAttachedFile.post.postId.eq(articleId));
 		 

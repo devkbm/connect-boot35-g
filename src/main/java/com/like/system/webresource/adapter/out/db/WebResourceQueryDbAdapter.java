@@ -14,15 +14,15 @@ import com.like.system.webresource.application.port.out.WebResourceQueryDbPort;
 @Transactional(readOnly = true)
 public class WebResourceQueryDbAdapter implements WebResourceQueryDbPort {	
 	
-	WebResourceQuerydsl query;
+	WebResourceQuerydsl repository;
 	
-	public WebResourceQueryDbAdapter(WebResourceQuerydsl query) {
-		this.query = query;
+	public WebResourceQueryDbAdapter(WebResourceQuerydsl repository) {
+		this.repository = repository;
 	}	
 
 	@Override
 	public List<WebResourceQueryResultDTO> getResourceList(WebResourceQueryDTO dto) {
-		return this.query.getList(dto);
+		return this.repository.getList(dto);
 	}	
 
 	

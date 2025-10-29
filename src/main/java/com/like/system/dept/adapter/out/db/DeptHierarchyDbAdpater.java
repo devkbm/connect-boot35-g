@@ -11,15 +11,15 @@ import com.like.system.dept.domain.DeptHierarchy;
 @Repository
 public class DeptHierarchyDbAdpater implements DeptHierarchySelectDbPort {
 	
-	DeptHierarchyQuerydsl query;
+	DeptHierarchyQuerydsl repository;
 	
 	DeptHierarchyDbAdpater(DeptHierarchyQuerydsl query) {
-		this.query = query;
+		this.repository = query;
 	}
 	
 	@Override
 	public List<DeptHierarchy> getAllNodes(String companyCode) {
-		return this.query.getAllNodes(companyCode);	
+		return this.repository.getAllNodes(companyCode);	
 	}
 
 }
