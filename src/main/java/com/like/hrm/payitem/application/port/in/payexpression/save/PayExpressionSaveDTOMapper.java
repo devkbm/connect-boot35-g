@@ -1,4 +1,4 @@
-package com.like.hrm.payitem.application.port.in.payexpression;
+package com.like.hrm.payitem.application.port.in.payexpression.save;
 
 import com.like.hrm.payitem.domain.PayExpression;
 

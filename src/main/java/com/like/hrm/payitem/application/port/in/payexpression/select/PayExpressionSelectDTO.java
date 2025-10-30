@@ -1,10 +1,11 @@
-package com.like.hrm.payitem.application.port.in.payexpression;
+package com.like.hrm.payitem.application.port.in.payexpression.select;
 
 import lombok.Builder;
 
 @Builder
-public record PayExpressionSaveDTO(
+public record PayExpressionSelectDTO(
 		String clientAppUrl,
+		String id,
 		String companyCode,
 		String payItemCode,
 		String payCondition,
