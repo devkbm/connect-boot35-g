@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PayExpressionQueryResultDTO {
 
-	Long id;
+	String id;
 	String companyCode;
 	String payItemCode;
 	String payItemName;

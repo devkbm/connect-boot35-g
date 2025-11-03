@@ -24,7 +24,7 @@ public class PayExpressionQuerydsl {
 			
 	public List<PayExpressionQueryResultDTO> query(PayExpressionQueryDTO dto) {
 		return queryFactory.select(Projections.fields(PayExpressionQueryResultDTO.class,
-					qPayExpression.id,
+					qPayExpression.id.stringValue().as("id"),
 					qPayExpression.companyCode,
 					qPayExpression.payItemCode,
 					qPayItem.payItemName,
