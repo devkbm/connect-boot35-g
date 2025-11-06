@@ -365,7 +365,7 @@ CREATE TABLE HRMPAYTABLE (
   	OCCUPATION_CODE         VARCHAR(10)	 	 	NULL    	,
   	JOB_GRADE_CODE  	    VARCHAR(10)	 	 	NULL    	,
   	PAY_STEP_CODE  	       	VARCHAR(10)	 	 	NULL    	,
-  	WAGE_AMOUNT				INT					NULL		,
+  	WAGE_AMOUNT				NUMERIC				NULL		,
   	ENABLE_YN				BOOLEAN		 	 	NULL    	,
   	CMT						VARCHAR(4000)		NULL		,
 	constraint pk_hrmpaytable primary key(PAY_TABLE_ID)
@@ -409,7 +409,7 @@ CREATE TABLE HRMPAYITEMSTAFF (
   	PAY_ITEM_TYPE          	VARCHAR(10)	 	 	NULL    	,	
   	FROM_DT 	          	DATETIME  			NULL    	,	
   	TO_DT   	          	DATETIME  			NULL    	,
-  	WAGE_AMOUNT				INT					NULL		,  	
+  	WAGE_AMOUNT				NUMERIC				NULL		,  	
   	CMT						VARCHAR(4000)		NULL		,
 	constraint pk_hrmpayitemstaff primary key(PAY_ITEM_STAFF_ID)
 );
@@ -428,7 +428,7 @@ CREATE TABLE HRMPAYSTAFF (
 	PAY_STAFF_ID		    VARCHAR(50)			NOT NULL	,	
 	ORG_CD				    VARCHAR(10)			NOT NULL	,
 	PAY_YYYYMM				VARCHAR(6)			NOT NULL	,
-	SEQ						INT					NOT NULL	,
+	PAY_SEQ					INT					NOT NULL	,
 	STAFF_NO			    VARCHAR(10)			NOT NULL	,
 	CLOSE_YN				BOOLEAN				NULL		,  	    	  
   	BLNG_DEPT_CODE			VARCHAR(10)			NULL		,
@@ -443,3 +443,21 @@ CREATE TABLE HRMPAYSTAFF (
 	constraint pk_hrmpaystaff primary key(PAY_STAFF_ID)
 );
 COMMENT ON TABLE HRMPAYSTAFF IS '급여직원';
+
+CREATE TABLE HRMPAYSTAFFITEM (
+	CREATED_DT			  	DATETIME			NULL		,
+	CREATED_USER_ID			VARCHAR(50)			NULL		,
+	CREATED_HOST_IP			VARCHAR(50)			NULL		,
+	CREATED_APP_URL			VARCHAR(500)		NULL		,
+	MODIFIED_DT			  	DATETIME			NULL		,
+	MODIFIED_USER_ID		VARCHAR(50)			NULL		,
+	MODIFIED_HOST_IP		VARCHAR(50)			NULL		,
+	MODIFIED_APP_URL		VARCHAR(500)		NULL		,
+	PAY_STAFF_ITEM_ID	    VARCHAR(50)			NOT NULL	,
+	PAY_STAFF_ID		    VARCHAR(50)			NOT NULL	,	
+	PAY_ITEM_CODE		    VARCHAR(10)			NOT NULL	,
+  	WAGE_AMOUNT				NUMERIC				NULL		,
+	constraint pk_hrmpaystaffitem primary key(PAY_STAFF_ITEM_ID),
+	constraint fk_hrmpaystaffitem foreign key(PAY_STAFF_ID) references HRMPAYSTAFF(PAY_STAFF_ID)
+);
+COMMENT ON TABLE HRMPAYSTAFFITEM IS '직원급여항목';

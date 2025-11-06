@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @EntityListeners(AuditingEntityListener.class)
 public class PayStaffInfo extends AbstractAuditEntity {
 	
-	// companyCode + payYm + seq + staffNo 
+	// companyCode + payYm + paySeq + staffNo 
 	@Id
 	@Column(name="PAY_STAFF_ID")
 	String id;
@@ -34,8 +34,8 @@ public class PayStaffInfo extends AbstractAuditEntity {
 	@Column(name="PAY_YYYYMM")
 	String payYm;
 	
-	@Column(name="SEQ")
-	Long seq;
+	@Column(name="PAY_SEQ")
+	Long paySeq;
 	
 	@Column(name="STAFF_NO")
 	String staffNo;
@@ -46,5 +46,19 @@ public class PayStaffInfo extends AbstractAuditEntity {
 	
 	@Embedded
 	PayStaffAppointment appointment;
-			
+	
+	public PayStaffInfo(
+			String companyCode,
+			String payYm,
+			Long paySeq,
+			String staffNo,
+			PayStaffAppointment appointment
+			) {
+		this.id = companyCode + payYm + paySeq + staffNo;  
+		this.companyCode = companyCode;
+		this.payYm = payYm;
+		this.paySeq = paySeq;
+		this.appointment = appointment;
+	}
+	
 }
