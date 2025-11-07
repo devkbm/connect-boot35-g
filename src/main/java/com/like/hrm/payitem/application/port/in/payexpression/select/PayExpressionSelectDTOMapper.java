@@ -1,6 +1,6 @@
 package com.like.hrm.payitem.application.port.in.payexpression.select;
 
-import com.like.hrm.payitem.domain.PayExpression;
+import com.like.hrm.payitem.domain.payexpression.PayExpression;
 
 public class PayExpressionSelectDTOMapper {
 

@@ -1,6 +1,6 @@
 package com.like.hrm.payitem.application.port.in.paytable.select;
 
-import com.like.hrm.payitem.domain.PayTable;
+import com.like.hrm.payitem.domain.paytable.PayTable;
 
 public class PayTableSelectDTOMapper {
 

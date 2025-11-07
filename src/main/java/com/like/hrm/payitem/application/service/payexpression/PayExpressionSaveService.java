@@ -6,7 +6,7 @@ import com.like.hrm.payitem.application.port.in.payexpression.save.PayExpression
 import com.like.hrm.payitem.application.port.in.payexpression.save.PayExpressionSaveDTOMapper;
 import com.like.hrm.payitem.application.port.in.payexpression.save.PayExpressionSaveUseCase;
 import com.like.hrm.payitem.application.port.out.PayExpressionCommandDbPort;
-import com.like.hrm.payitem.domain.PayExpression;
+import com.like.hrm.payitem.domain.payexpression.PayExpression;
 
 import jakarta.persistence.EntityNotFoundException;
 

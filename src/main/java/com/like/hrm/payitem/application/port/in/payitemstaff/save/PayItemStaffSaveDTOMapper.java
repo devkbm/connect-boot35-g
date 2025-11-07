@@ -1,7 +1,7 @@
 package com.like.hrm.payitem.application.port.in.payitemstaff.save;
 
 import com.like.common.vo.LocalDatePeriod;
-import com.like.hrm.payitem.domain.PayItemStaff;
+import com.like.hrm.payitem.domain.payitemstaff.PayItemStaff;
 
 public class PayItemStaffSaveDTOMapper {
 

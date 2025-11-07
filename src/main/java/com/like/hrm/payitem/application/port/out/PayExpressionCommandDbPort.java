@@ -2,7 +2,7 @@ package com.like.hrm.payitem.application.port.out;
 
 import java.util.Optional;
 
-import com.like.hrm.payitem.domain.PayExpression;
+import com.like.hrm.payitem.domain.payexpression.PayExpression;
 
 public interface PayExpressionCommandDbPort {
 

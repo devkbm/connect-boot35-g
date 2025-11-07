@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import com.like.hrm.payitem.adapter.out.db.paytable.data.PayTableJpaRepository;
 import com.like.hrm.payitem.application.port.out.PayTableCommandDbPort;
-import com.like.hrm.payitem.domain.PayTable;
 import com.like.hrm.payitem.domain.QPayTable;
+import com.like.hrm.payitem.domain.paytable.PayTable;
 
 @Repository
 public class PayTableCommandDbAdapter implements PayTableCommandDbPort {

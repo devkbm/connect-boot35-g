@@ -6,8 +6,8 @@ import com.like.hrm.payitem.application.port.in.payitem.save.PayItemSaveDTO;
 import com.like.hrm.payitem.application.port.in.payitem.save.PayItemSaveDTOMapper;
 import com.like.hrm.payitem.application.port.in.payitem.save.PayItemSaveUseCase;
 import com.like.hrm.payitem.application.port.out.PayItemCommandDbPort;
-import com.like.hrm.payitem.domain.PayItem;
-import com.like.hrm.payitem.domain.PayItemId;
+import com.like.hrm.payitem.domain.payitem.PayItem;
+import com.like.hrm.payitem.domain.payitem.PayItemId;
 
 @Service
 public class PayItemSaveService implements PayItemSaveUseCase {

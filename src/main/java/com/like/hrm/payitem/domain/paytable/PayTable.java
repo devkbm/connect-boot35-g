@@ -1,4 +1,4 @@
-package com.like.hrm.payitem.domain;
+package com.like.hrm.payitem.domain.paytable;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

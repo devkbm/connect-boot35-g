@@ -6,7 +6,7 @@ import com.like.hrm.payitem.application.port.in.payitemstaff.save.PayItemStaffSa
 import com.like.hrm.payitem.application.port.in.payitemstaff.save.PayItemStaffSaveDTOMapper;
 import com.like.hrm.payitem.application.port.in.payitemstaff.save.PayItemStaffSaveUseCase;
 import com.like.hrm.payitem.application.port.out.PayItemStaffCommandDbPort;
-import com.like.hrm.payitem.domain.PayItemStaff;
+import com.like.hrm.payitem.domain.payitemstaff.PayItemStaff;
 
 import jakarta.persistence.EntityExistsException;
 

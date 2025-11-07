@@ -1,4 +1,4 @@
-package com.like.hrm.payitem.domain;
+package com.like.hrm.payitem.domain.payitem;
 
 import java.io.Serializable;
 

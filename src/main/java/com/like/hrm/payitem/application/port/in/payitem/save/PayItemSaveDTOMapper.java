@@ -1,7 +1,7 @@
 package com.like.hrm.payitem.application.port.in.payitem.save;
 
-import com.like.hrm.payitem.domain.PayItem;
-import com.like.hrm.payitem.domain.PayItemId;
+import com.like.hrm.payitem.domain.payitem.PayItem;
+import com.like.hrm.payitem.domain.payitem.PayItemId;
 
 public class PayItemSaveDTOMapper {
 

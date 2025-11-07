@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.like.hrm.payitem.adapter.out.db.payexpression.data.PayExpressionJpaRepository;
 import com.like.hrm.payitem.application.port.out.PayExpressionCommandDbPort;
-import com.like.hrm.payitem.domain.PayExpression;
+import com.like.hrm.payitem.domain.payexpression.PayExpression;
 
 @Repository
 public class PayExpressionCommandDbAdapter implements PayExpressionCommandDbPort {

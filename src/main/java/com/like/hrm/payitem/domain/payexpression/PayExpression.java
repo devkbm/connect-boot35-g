@@ -1,19 +1,16 @@
-package com.like.hrm.payitem.domain;
-
-import java.math.BigDecimal;
+package com.like.hrm.payitem.domain.payexpression;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import com.like.common.vo.LocalDatePeriod;
 import com.like.core.jpa.domain.AbstractAuditEntity;
 
 import io.hypersistence.utils.hibernate.id.Tsid;
 import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,58 +18,58 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Table(name = "HRMPAYITEMSTAFF")
+@Table(name = "HRMPAYEXPRESSION")
 @EntityListeners(AuditingEntityListener.class)
-public class PayItemStaff extends AbstractAuditEntity {
-
+public class PayExpression extends AbstractAuditEntity {
+	
 	@Id
 	@Tsid
-	@Column(name="PAY_ITEM_STAFF_ID")	
+	@Column(name="PAY_EXPR_ID")	
 	Long id;
-		
+	
 	@Column(name="ORG_CD")
 	String companyCode;
-
-	@Column(name="STAFF_NO")
-	String staffNo;
 	
 	@Column(name="PAY_ITEM_CODE")
 	String payItemCode;
 	
-	@Embedded
-	LocalDatePeriod priod;
+	@Column(name="PAY_CONDITION")
+	String payCondition;
 	
-	@Column(name="WAGE_AMOUNT")
-	BigDecimal wageAmount;
+	@Column(name="FORMULA")
+	String formula;
 	
+	@Column(name="SEQ")
+	Long seq;
+
 	@Column(name="CMT")
-	String comment;	
+	String comment;
 	
-	public PayItemStaff(
+	public PayExpression(
 			String companyCode,
-			String staffNo,
 			String payItemCode,
-			LocalDatePeriod priod,
-			BigDecimal wageAmount,
+			String payCondition,
+			String formula,
+			Long seq,
 			String comment
 			) {
 		this.companyCode = companyCode;
-		this.staffNo = staffNo;
 		this.payItemCode = payItemCode;
-		this.priod = priod;
-		this.wageAmount = wageAmount;
+		this.payCondition = payCondition;
+		this.formula = formula;
+		this.seq = seq;
 		this.comment = comment;
 	}
 	
 	public void modify(
-			String payItemCode,
-			LocalDatePeriod priod,
-			BigDecimal wageAmount,
+			String payCondition,
+			String formula,
+			Long seq,
 			String comment
 			) {
-		this.payItemCode = payItemCode;
-		this.priod = priod;
-		this.wageAmount = wageAmount;
+		this.payCondition = payCondition;
+		this.formula = formula;
+		this.seq = seq;
 		this.comment = comment;
 	}
 	

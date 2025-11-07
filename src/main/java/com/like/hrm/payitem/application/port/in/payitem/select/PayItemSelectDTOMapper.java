@@ -1,6 +1,6 @@
 package com.like.hrm.payitem.application.port.in.payitem.select;
 
-import com.like.hrm.payitem.domain.PayItem;
+import com.like.hrm.payitem.domain.payitem.PayItem;
 
 public class PayItemSelectDTOMapper {
 

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.like.hrm.payitem.application.port.in.payitem.delete.PayItemDeleteUseCase;
 import com.like.hrm.payitem.application.port.out.PayItemCommandDbPort;
-import com.like.hrm.payitem.domain.PayItemId;
+import com.like.hrm.payitem.domain.payitem.PayItemId;
 
 @Service
 public class PayItemDeleteService implements PayItemDeleteUseCase {

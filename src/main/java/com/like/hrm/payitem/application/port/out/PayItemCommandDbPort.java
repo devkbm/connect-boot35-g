@@ -2,8 +2,8 @@ package com.like.hrm.payitem.application.port.out;
 
 import java.util.Optional;
 
-import com.like.hrm.payitem.domain.PayItem;
-import com.like.hrm.payitem.domain.PayItemId;
+import com.like.hrm.payitem.domain.payitem.PayItem;
+import com.like.hrm.payitem.domain.payitem.PayItemId;
 
 public interface PayItemCommandDbPort {
 	

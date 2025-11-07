@@ -6,7 +6,7 @@ import com.like.hrm.payitem.application.port.in.payitem.select.PayItemSelectDTO;
 import com.like.hrm.payitem.application.port.in.payitem.select.PayItemSelectDTOMapper;
 import com.like.hrm.payitem.application.port.in.payitem.select.PayItemSelectUseCase;
 import com.like.hrm.payitem.application.port.out.PayItemCommandDbPort;
-import com.like.hrm.payitem.domain.PayItemId;
+import com.like.hrm.payitem.domain.payitem.PayItemId;
 
 @Service
 public class PayItemSelectService implements PayItemSelectUseCase {
