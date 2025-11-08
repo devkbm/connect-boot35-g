@@ -12,6 +12,7 @@ public record PostQueryDTO(
 		String title,
 		String contents
 		) {
+	/*
 	private static final QPost qPost = QPost.post;
 	
 	public BooleanBuilder getBooleanBuilder() {
@@ -32,5 +33,6 @@ public record PostQueryDTO(
 	private BooleanExpression likeContents(String contents) {
 		return hasText(contents) ? qPost.content.contents.like("%"+contents+"%") : null;			
 	}
+	*/
 	
 }

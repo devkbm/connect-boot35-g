@@ -6,8 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import com.like.hrm.payitem.adapter.out.db.payitemstaff.data.PayItemStaffJpaRepository;
 import com.like.hrm.payitem.application.port.out.PayItemStaffCommandDbPort;
-import com.like.hrm.payitem.domain.QPayItemStaff;
+
 import com.like.hrm.payitem.domain.payitemstaff.PayItemStaff;
+import com.like.hrm.payitem.domain.payitemstaff.QPayItemStaff;
 
 @Repository
 public class PayItemStaffCommandDbAdapter implements PayItemStaffCommandDbPort {

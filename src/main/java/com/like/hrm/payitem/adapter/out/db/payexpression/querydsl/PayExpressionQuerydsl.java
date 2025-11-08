@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import com.like.hrm.payitem.application.port.in.payexpression.query.PayExpressionQueryDTO;
 import com.like.hrm.payitem.application.port.in.payexpression.query.PayExpressionQueryResultDTO;
-import com.like.hrm.payitem.domain.QPayExpression;
-import com.like.hrm.payitem.domain.QPayItem;
+import com.like.hrm.payitem.domain.payexpression.QPayExpression;
+import com.like.hrm.payitem.domain.payitem.QPayItem;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 

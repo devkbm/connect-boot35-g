@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import com.like.hrm.hrmcode.domain.QHrmCode;
 import com.like.hrm.payitem.application.port.in.paytable.query.PayTableQueryDTO;
 import com.like.hrm.payitem.application.port.in.paytable.query.PayTableQueryResultDTO;
-import com.like.hrm.payitem.domain.QPayItem;
-import com.like.hrm.payitem.domain.QPayTable;
+import com.like.hrm.payitem.domain.payitem.QPayItem;
+import com.like.hrm.payitem.domain.paytable.QPayTable;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
