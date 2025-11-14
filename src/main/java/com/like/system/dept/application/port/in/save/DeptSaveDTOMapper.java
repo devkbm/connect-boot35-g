@@ -51,8 +51,27 @@ public class DeptSaveDTOMapper {
 						   .parentDept(parentDept)
 						   .parentDeptCode(parentDept == null ? null : parentDept.getId().getDeptCode())
 						   .build();
-		entity.createdAppUrl(dto.clientAppUrl());
-		
+				
 		return entity;
 	}
+	
+	public static Dept modifyEntity(Dept dept, DeptSaveDTO dto, @Nullable Dept parentDept) {
+		if (dto.companyCode() == null) new IllegalArgumentException("조직코드가 없습니다.");
+		if (dto.deptCode() == null) new IllegalArgumentException("부서코드가 없습니다.");
+		
+		dept.modifyBuilder()		
+			.deptNameKorean(dto.deptNameKorean())
+			.deptAbbreviationKorean(dto.deptAbbreviationKorean())
+			.deptNameEnglish(dto.deptNameEnglish())
+			.deptAbbreviationEnglish(dto.deptAbbreviationEnglish())
+			.period(new LocalDatePeriod(dto.fromDate(), dto.toDate()))					   
+			.seq(dto.seq())
+			.comment(dto.comment())
+			.parentDept(parentDept)
+			.build();
+				
+		return dept;
+	}
+	
+	
 }

@@ -21,6 +21,7 @@ import org.springframework.util.Assert;
 import com.like.common.vo.LocalDatePeriod;
 import com.like.core.jpa.domain.AbstractAuditEntity;
 
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -74,12 +75,36 @@ public class Dept extends AbstractAuditEntity implements Serializable {
 	})	
 	Dept parentDept;
 	
+	
 	public static DeptBuilder builder(String companyCode, String deptCode) {
 		Assert.hasText(companyCode, "companyCode must not be empty!");
 		Assert.hasText(deptCode, "deptCode must not be empty!");
 						
 		return internalBuilder().id(new DeptId(companyCode, deptCode));
 	}
+	
+	@Builder(builderMethodName = "modifyBuilder")
+	public void modify(
+			String deptNameKorean,
+			String deptAbbreviationKorean,
+			String deptNameEnglish,
+			String deptAbbreviationEnglish,
+			LocalDatePeriod period,
+			Integer seq,
+			String comment,
+			Dept parentDept
+			) {
+		this.deptNameKorean = deptNameKorean;
+		this.deptAbbreviationKorean = deptAbbreviationKorean;
+		this.deptNameEnglish = deptNameEnglish;
+		this.deptAbbreviationEnglish = deptAbbreviationEnglish;
+		this.period = period;
+		this.seq = seq;
+		this.comment = comment;
+		this.parentDept = parentDept;
+	}
+	
+	
 		
 	public Dept getParentDept() {
 		return parentDept;
