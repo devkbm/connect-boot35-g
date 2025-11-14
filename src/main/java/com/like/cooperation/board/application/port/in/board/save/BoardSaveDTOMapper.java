@@ -40,7 +40,7 @@ public class BoardSaveDTOMapper {
 							.useYn(dto.useYn())							
 							.build();	
 		
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 		
 		return entity;					
 	}	

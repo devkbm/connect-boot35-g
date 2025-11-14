@@ -42,7 +42,7 @@ public record PostSaveByMultipartDTO(
 					    .isFixedTop(isFiexedTop)
 					    .build();
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;
 	}

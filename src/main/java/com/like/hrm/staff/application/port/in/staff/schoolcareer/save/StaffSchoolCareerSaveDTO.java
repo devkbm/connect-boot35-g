@@ -38,7 +38,7 @@ public record StaffSchoolCareerSaveDTO(
 													.location(location)
 													.lessonYear(lessonYear)
 													.build(); 
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity; 					
 	}
@@ -56,7 +56,7 @@ public record StaffSchoolCareerSaveDTO(
 		      .comment(comment)
 			  .modify();			
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 	}	
 	
 	public static StaffSchoolCareerSaveDTO toDTO(StaffSchoolCareer entity) {

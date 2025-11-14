@@ -48,14 +48,13 @@ public class WebResource extends AbstractAuditEntity implements Serializable{
 	String description;	
 		
 	@Builder
-	public WebResource(
-			String appUrl,
+	public WebResource(			
 			String resourceId,
 			String resourceName,
 			String resourceType,
 			String url,
-			String description) {		
-		this.setAppUrl(appUrl);
+			String description
+			) {				
 		this.id = resourceId;
 		this.name = resourceName;
 		this.type = resourceType;
@@ -64,13 +63,12 @@ public class WebResource extends AbstractAuditEntity implements Serializable{
 	}	
 		
 	@Builder(builderMethodName = "modifyBuilder", buildMethodName = "modify")
-	public void modify(
-			String appUrl,
+	public void modify(			
 			String resourceName,
 			String resourceType,
 			String url,
-			String description) {
-		this.setAppUrl(appUrl);
+			String description
+			) {		
 		this.name = resourceName;
 		this.type = resourceType;
 		this.url = url;

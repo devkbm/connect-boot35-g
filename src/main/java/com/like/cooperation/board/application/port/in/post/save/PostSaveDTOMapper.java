@@ -19,7 +19,7 @@ public class PostSaveDTOMapper {
 						  .isFixedTop(dto.isFiexedTop())
 						  .build();
 		
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 		
 		return entity;
 	}

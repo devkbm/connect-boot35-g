@@ -86,7 +86,7 @@ public class Board extends AbstractAuditEntity {
 			String boardName,
 			String description
 			) {
-		this.setAppUrl(appUrl);
+		this.createdAppUrl(appUrl);
 		this.parent = parent;
 		this.boardType = boardType;
 		this.boardName = boardName;
@@ -102,7 +102,7 @@ public class Board extends AbstractAuditEntity {
 		    String description,						    
 		    Boolean useYn,
 		    long sequence) {
-		this.setAppUrl(appUrl);
+		this.createdAppUrl(appUrl);
 		this.parent = parent;
 		this.boardType = boardType;
 		this.boardName = boardName;

@@ -51,7 +51,7 @@ public class DeptSaveDTOMapper {
 						   .parentDept(parentDept)
 						   .parentDeptCode(parentDept == null ? null : parentDept.getId().getDeptCode())
 						   .build();
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 		
 		return entity;
 	}

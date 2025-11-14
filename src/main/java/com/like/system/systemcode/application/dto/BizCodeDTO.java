@@ -37,7 +37,7 @@ public class BizCodeDTO {
 			
 			JpaBizCode entity = new JpaBizCode(bizType, code, codeName, useYn, sequence, comment); 
 			
-			entity.setAppUrl(clientAppUrl);
+			entity.createdAppUrl(clientAppUrl);
 			
 			return entity;
 		}
@@ -49,7 +49,7 @@ public class BizCodeDTO {
 						 ,sequence						 
 						 ,comment);
 			
-			entity.setAppUrl(clientAppUrl);
+			entity.createdAppUrl(clientAppUrl);
 			
 			return entity;
 		}		

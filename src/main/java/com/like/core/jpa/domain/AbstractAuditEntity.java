@@ -73,16 +73,20 @@ public abstract class AbstractAuditEntity {
         
     @PrePersist
     protected void prePersist() {    	
-    	this.modifiedAppUrl = this.createdAppUrl;    	
+    	this.modifiedAppUrl = this.modifiedAppUrl == null ? this.createdAppUrl : this.modifiedAppUrl;    	
     }
  
     @PreUpdate
     protected void preUpdate() {
-    	this.modifiedAppUrl = this.createdAppUrl;    	
+    	this.modifiedAppUrl = this.modifiedAppUrl == null ? this.createdAppUrl : this.modifiedAppUrl;    	
+    }
+           
+    public void createdAppUrl(String appUrl) {
+    	this.createdAppUrl = appUrl;
     }
     
-    public void setAppUrl(String appUrl) {
-    	this.createdAppUrl = appUrl;
+    public void modifiedAppUrl(String appUrl) {
+    	this.modifiedAppUrl = appUrl;
     }
 
     /*
@@ -99,6 +103,5 @@ public abstract class AbstractAuditEntity {
 				+ ", modifiedDt=" + modifiedDt + ", modifiedByLoggedUser=" + modifiedByLoggedUser 
 				+ ", modifiedByHospIp=" + modifiedByHospIp + ", modifiedAppUrl=" + modifiedAppUrl + "]";
 	}
-	*/
-    
+	*/    
 }

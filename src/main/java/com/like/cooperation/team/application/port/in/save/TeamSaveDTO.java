@@ -30,7 +30,7 @@ public record TeamSaveDTO(
 			entity = new Team(teamName, this.memberList);
 		}										
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;
 	}
@@ -40,7 +40,7 @@ public record TeamSaveDTO(
 									
 		entity.updateMembers(this.memberList);
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;
 	}

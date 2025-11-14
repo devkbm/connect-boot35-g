@@ -94,7 +94,7 @@ public class Post extends AbstractAuditEntity {
 		
 		if (board == null) throw new IllegalArgumentException("게시판이 존재하지 않습니다.");
 		
-		this.setAppUrl(appUrl);
+		this.createdAppUrl(appUrl);
 		this.userId = userId;
 		this.board = board;
 		this.content = content;
@@ -111,7 +111,7 @@ public class Post extends AbstractAuditEntity {
 		
 		if (board == null) throw new IllegalArgumentException("게시판이 존재하지 않습니다.");
 		
-		this.setAppUrl(appUrl);
+		this.createdAppUrl(appUrl);
 		this.board = board;
 		this.content = content;
 		this.password = password;
@@ -119,7 +119,7 @@ public class Post extends AbstractAuditEntity {
 	}
 	
 	public void modify(String appUrl, PostContents content, boolean isFiexedTop) {
-		this.setAppUrl(appUrl);
+		this.createdAppUrl(appUrl);
 		this.content = content;				
 		this.isFixedTop = isFiexedTop;
 	}

@@ -61,16 +61,14 @@ public class SystemUser extends AbstractAuditEntity implements Serializable {
 	Set<SystemUserCompany> company = new LinkedHashSet<>();
 	
 	@Builder
-	public SystemUser(
-			String appUrl,
+	public SystemUser(			
 			String userId,					 
 			String name,
 			SystemUserPassword password,
 			String mobileNum,
 			String email,
-			SystemUserAccountAttribute accountSpec) {
-		this.setAppUrl(appUrl);
-		
+			SystemUserAccountAttribute accountSpec
+			) {				
 		this.id = new SystemUserId(userId);	
 		this.name = name;
 		this.password = password;		
@@ -80,12 +78,11 @@ public class SystemUser extends AbstractAuditEntity implements Serializable {
 	}
 	
 	@Builder(builderMethodName = "modifyBuilder", buildMethodName = "modify")
-	public void modify(
-			String appUrl,
+	public void modify(			
 			String name,
 			String mobileNum,
-			String email) {
-		this.setAppUrl(appUrl);		
+			String email
+			) {			
 		this.name = name;						
 		this.mobileNum = mobileNum;
 		this.email = email;							

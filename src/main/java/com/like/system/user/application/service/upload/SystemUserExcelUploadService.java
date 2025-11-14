@@ -32,7 +32,8 @@ public class SystemUserExcelUploadService implements SystemUserExcelUploadUseCas
 			SystemUserRoleCommandDbPort userRoleDbPort,
 			SystemUserCompanyCommandDbPort userCompanyDbPort, 
 			DeptCommandDbPort deptDbPort,
-			PasswordEncoder passwordEncoder) {
+			PasswordEncoder passwordEncoder
+			) {
 		this.dbPort = dbPort;		
 		this.userRoleDbPort = userRoleDbPort;
 		this.userCompanyDbPort = userCompanyDbPort;
@@ -50,8 +51,9 @@ public class SystemUserExcelUploadService implements SystemUserExcelUploadUseCas
 			if (user == null) {
 				user = dto.newUser(dept);
 				user.setPassword(passwordEncoder, SystemUserPassword.getInitPassword());
+				user.createdAppUrl(dto.getClientAppUrl());				
 			} else {
-				//dto.modifyUser(user, dept);
+				//dto.mo(user, dept);
 			}							
 					
 			this.dbPort.save(user);

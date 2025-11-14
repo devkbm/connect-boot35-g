@@ -56,8 +56,13 @@ public class SystemUserSaveService implements SystemUserSaveUseCase {
 		if (user == null) {
 			user = dto.newUser(dept);
 			user.setPassword(passwordEncoder, SystemUserPassword.getInitPassword());
+			
+			user.createdAppUrl(dto.clientAppUrl());
+			
 		} else {
 			dto.modifyUser(user, dept);
+			
+			user.modifiedAppUrl(dto.clientAppUrl());
 		}							
 				
 		this.dbPort.save(user);

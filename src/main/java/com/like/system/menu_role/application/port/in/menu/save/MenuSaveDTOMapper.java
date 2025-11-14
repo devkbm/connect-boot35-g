@@ -46,7 +46,7 @@ public class MenuSaveDTOMapper {
 						  .appIcon(new MenuAppIcon(dto.appIconType(), dto.appIcon()))
 						  .build();
 		
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 		
 		return entity;
 	}

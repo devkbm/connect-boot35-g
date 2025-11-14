@@ -34,7 +34,7 @@ public record BizCodeSelectDTO(
 		
 		JpaBizCode entity = new JpaBizCode(bizType, code, codeName, useYn, sequence, comment); 
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;
 	}
@@ -46,7 +46,7 @@ public record BizCodeSelectDTO(
 					 ,sequence						 
 					 ,comment);
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;
 	}	

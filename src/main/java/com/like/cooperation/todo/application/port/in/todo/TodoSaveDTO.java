@@ -27,7 +27,7 @@ public record TodoSaveDTO(
 						  .comments(comments)
 						  .build();
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;	
 	}
@@ -35,7 +35,7 @@ public record TodoSaveDTO(
 	public void modifyEntity(Todo entity) {
 		entity.modify(todo, completed, dueDate, comments);
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 	}
 	
 	public static TodoSaveDTO toDTO(Todo entity) {		

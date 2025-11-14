@@ -36,7 +36,7 @@ public record SystemUserExcelUploadDTO(
 									  .accountSpec(new SystemUserAccountAttribute(true, true, true, true))										  										  			 
 									  .build();
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;			
 	}

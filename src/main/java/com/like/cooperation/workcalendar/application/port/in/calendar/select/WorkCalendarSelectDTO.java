@@ -27,14 +27,14 @@ public record WorkCalendarSelectDTO(
 	
 	public WorkCalendar newWorkGroup() {
 		WorkCalendar entity = new WorkCalendar(this.workCalendarName, this.color);
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		return entity;
 	}
 	
 	public void modifyWorkGroup(WorkCalendar workGroup) {
 		workGroup.modifyEntity(this.workCalendarName, color);
 		
-		workGroup.setAppUrl(clientAppUrl);
+		workGroup.createdAppUrl(clientAppUrl);
 	}
 	
 	public static WorkCalendarSelectDTO toDTO(WorkCalendar entity) {

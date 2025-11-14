@@ -30,8 +30,8 @@ public class SystemUserPasswordService implements SystemUserPasswordChangeUseCas
 	public void initPassword(String companyCode, String userId) {
 		SystemUser user = dbPort.select(userId).orElse(null);
 		
-		user.setPassword(passwordEncoder, SystemUserPassword.getInitPassword());		
-		
+		user.setPassword(passwordEncoder, SystemUserPassword.getInitPassword());
+						
 		dbPort.save(user);
 	}
 	
@@ -40,6 +40,8 @@ public class SystemUserPasswordService implements SystemUserPasswordChangeUseCas
 		SystemUser user = dbPort.select(dto.userId()).orElse(null);			
 				
 		user.changePassword(passwordEncoder, dto.beforePassword(), dto.afterPassword());		 	
+		
+		user.modifiedAppUrl(dto.clientAppUrl());
 		
 		dbPort.save(user);
 	}

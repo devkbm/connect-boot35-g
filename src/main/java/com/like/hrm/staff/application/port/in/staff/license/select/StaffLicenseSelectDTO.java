@@ -32,7 +32,7 @@ public record StaffLicenseSelectDTO(
 										  .certificationAuthority(certificationAuthority)
 										  .comment(comment)
 										  .build();
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity; 			
 	}
@@ -46,7 +46,7 @@ public record StaffLicenseSelectDTO(
 		      .comment(comment)
 			  .modify();
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 	}	
 	
 	public static StaffLicenseSelectDTO toDTO(StaffLicense entity)  {

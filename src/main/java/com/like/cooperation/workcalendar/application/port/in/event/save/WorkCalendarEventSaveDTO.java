@@ -45,13 +45,13 @@ public record WorkCalendarEventSaveDTO(
 								  .allDay(this.allDay)
 								  .workCalendar(workCalendar)
 								  .build();
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		return entity;
 	}
 	
 	public void modifySchedule(WorkCalendarEvent entity) {
 		entity.modifyEntity(text, start, end, allDay);
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 	}
 	
 	public static WorkCalendarEventSaveDTO convertDTO(WorkCalendarEvent entity) {

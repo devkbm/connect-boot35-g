@@ -8,7 +8,7 @@ public class MenuRoleMappingSaveDTOMapper {
 	public static MenuRoleMapping toEntity(MenuRoleMappingSaveDTO dto) {
 		MenuRoleMapping entity = new MenuRoleMapping(new MenuRoleMappingId(dto.companyCode(), dto.menuGroupCode(), dto.menuCode(), dto.roleCode()));
 		
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 		
 		return entity;
 	}

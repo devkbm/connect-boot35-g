@@ -26,10 +26,14 @@ public class StaffCreateService implements StaffCreateUseCase {
 
 		StaffNoCreateStrategy strategy = () -> dto.staffNo();
 		
-		Staff staff = new Staff(dto.companyCode()
-				               ,strategy
-				               ,new StaffName(dto.name(), dto.nameEng(), dto.nameEng())
-				               ,dto.residentRegistrationNumber());
+		Staff staff = new Staff(
+				dto.companyCode(),
+				strategy,
+				new StaffName(dto.name(), dto.nameEng(), dto.nameEng()),
+				dto.residentRegistrationNumber()
+				);
+		
+		staff.createdAppUrl(dto.clientAppUrl());
 									
 		dbPort.save(staff);
 	}

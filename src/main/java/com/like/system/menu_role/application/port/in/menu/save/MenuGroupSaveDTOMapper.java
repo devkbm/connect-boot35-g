@@ -32,7 +32,7 @@ public class MenuGroupSaveDTOMapper {
 								    .sequence(dto.sequence())
 								    .build();
 		
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 		
 		return entity;	
 	}
@@ -40,7 +40,7 @@ public class MenuGroupSaveDTOMapper {
 	public static void modifyMenuGroup(MenuGroupSaveDTO dto, MenuGroup menuGroup) {
 		menuGroup.modifyEntity(dto.menuGroupName(), dto.menuGroupUrl(), dto.description(), dto.sequence());
 		
-		menuGroup.setAppUrl(dto.clientAppUrl());
+		menuGroup.createdAppUrl(dto.clientAppUrl());
 	}	
 	
 }

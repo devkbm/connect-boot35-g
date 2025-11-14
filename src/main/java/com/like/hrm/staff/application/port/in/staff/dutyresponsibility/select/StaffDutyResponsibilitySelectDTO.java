@@ -31,7 +31,7 @@ public record StaffDutyResponsibilitySelectDTO(
 									.isPayApply(isPayApply)
 									.build(); 									
 							
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;
 	}
@@ -46,7 +46,7 @@ public record StaffDutyResponsibilitySelectDTO(
 		
 		//entity.modifyEntity(dutyResponsibilityCode, fromDate, toDate, isPayApply);
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 	}
 	
 	

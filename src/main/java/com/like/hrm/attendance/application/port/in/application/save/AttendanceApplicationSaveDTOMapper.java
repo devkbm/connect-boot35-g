@@ -43,7 +43,7 @@ public class AttendanceApplicationSaveDTOMapper {
 				);		
 		*/
 		
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 	}
 		
 	

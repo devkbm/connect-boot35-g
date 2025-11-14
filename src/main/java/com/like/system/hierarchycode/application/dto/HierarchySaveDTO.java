@@ -43,7 +43,7 @@ public record HierarchySaveDTO(
 						  .cmt(this.cmt)
 						  .build();
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;
 	}
@@ -57,7 +57,7 @@ public record HierarchySaveDTO(
 						 ,this.lowLevelCodeLength
 						 ,this.cmt);
 		
-		code.setAppUrl(clientAppUrl);
+		code.createdAppUrl(clientAppUrl);
 	}
 	
 	public static HierarchySaveDTO convertDTO(Code entity) {					

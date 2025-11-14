@@ -45,7 +45,7 @@ public record SystemUserSaveDTO(
 									  .accountSpec(new SystemUserAccountAttribute(true, true, true, true))										  										  			 
 									  .build();
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		
 		return entity;
 		
@@ -59,7 +59,7 @@ public record SystemUserSaveDTO(
 			.email(email)			
 			.modify();
 		
-		user.setAppUrl(clientAppUrl);
+		user.createdAppUrl(clientAppUrl);
 	}
 		
 }

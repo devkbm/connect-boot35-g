@@ -82,7 +82,7 @@ public class BizCodeTypeDTO {
 
 		public JpaBizCodeType newEntity() {						
 			JpaBizCodeType entity = new JpaBizCodeType(companyCode, typeId, typeName, JpaBizTypeEnum.valueOf(bizType), comment);
-			entity.setAppUrl(clientAppUrl);
+			entity.createdAppUrl(clientAppUrl);
 			
 			return entity;
 		}
@@ -93,7 +93,7 @@ public class BizCodeTypeDTO {
 						 ,null
 						 ,comment);
 			
-			entity.setAppUrl(clientAppUrl);
+			entity.createdAppUrl(clientAppUrl);
 			
 			return entity;
 		}

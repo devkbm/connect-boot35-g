@@ -20,7 +20,7 @@ public class WordSaveDTOMapper {
 												  ,dto.physicalName()
 												  ,dto.comment()
 												  );
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 		
 		return entity;
 	}

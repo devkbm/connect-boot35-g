@@ -32,7 +32,7 @@ public record StaffFamilySelectDTO(
 										.schoolCareerType(schoolCareerType)
 										.comment(comment)
 										.build();
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 		return entity; 							
 	}
 	
@@ -46,7 +46,7 @@ public record StaffFamilySelectDTO(
 		      .comment(comment)
 		      .modify();		
 		
-		entity.setAppUrl(clientAppUrl);
+		entity.createdAppUrl(clientAppUrl);
 	}
 	
 	public static StaffFamilySelectDTO toDTO(StaffFamily entity) {

@@ -22,7 +22,7 @@ public class HolidaySaveDTOMapper {
 		
 		Holiday entity = new Holiday(new HolidayId(dto.companyCode(), dto.date()), dto.holidayName(), dto.comment());
 		
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 		
 		return entity;
 	}

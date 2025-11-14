@@ -6,6 +6,9 @@ import com.like.system.webresource.application.port.in.save.WebResourceSaveUseCa
 import com.like.system.webresource.application.port.in.save.WebResourceSaveDTO;
 import com.like.system.webresource.application.port.in.save.WebResourceSaveDTOMapper;
 import com.like.system.webresource.application.port.out.WebResourceCommandDbPort;
+import com.like.system.webresource.domain.WebResource;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class WebResourceSaveService implements WebResourceSaveUseCase {
@@ -17,8 +20,22 @@ public class WebResourceSaveService implements WebResourceSaveUseCase {
 	}
 	
 	@Override
-	public void save(WebResourceSaveDTO dto) {
-		this.port.save(WebResourceSaveDTOMapper.toEntity(dto));		
+	public void save(WebResourceSaveDTO dto) {	
+		WebResource entity = null;
+		
+		if (exists(dto.resourceId())) {
+			entity = this.port.select(dto.resourceId())
+							  .orElseThrow(() -> new EntityNotFoundException(dto.resourceId() +" 웹리소스 정보가 존재하지 않습니다."));			
+			entity = WebResourceSaveDTOMapper.modifyEntity(entity, dto); 
+			
+			entity.modifiedAppUrl(dto.clientAppUrl());			
+		} else {
+			entity = WebResourceSaveDTOMapper.newEntity(dto);
+			
+			entity.createdAppUrl(dto.clientAppUrl());
+		}
+		
+		this.port.save(entity);		
 	}
 
 	@Override

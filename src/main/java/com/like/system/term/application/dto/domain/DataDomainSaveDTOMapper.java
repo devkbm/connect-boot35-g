@@ -25,7 +25,7 @@ public class DataDomainSaveDTOMapper {
 														  .comment(dto.comment())
 														  .build();
 		
-		entity.setAppUrl(dto.clientAppUrl());
+		entity.createdAppUrl(dto.clientAppUrl());
 		
 		return entity;
 	}

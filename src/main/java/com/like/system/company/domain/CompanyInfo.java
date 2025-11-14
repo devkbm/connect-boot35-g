@@ -93,7 +93,7 @@ public class CompanyInfo extends AbstractAuditEntity {
 			String nameOfRepresentative,
 			LocalDate establishmentDate
 			) {
-		this.setAppUrl(appUrl);
+		this.createdAppUrl(appUrl);
 		this.id = new CompanyInfoId(id);
 		this.companyName = companyName;
 		this.businessRegistrationNumber = businessRegistrationNumber;
