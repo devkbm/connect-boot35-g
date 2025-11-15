@@ -3,7 +3,7 @@ package com.like.system.company.application.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.like.system.company.application.port.in.CompanyDeleteUseCase;
+import com.like.system.company.application.port.in.delete.CompanyDeleteUseCase;
 import com.like.system.company.application.port.out.CompanyCommandDbPort;
 import com.like.system.company.domain.CompanyInfoId;
 

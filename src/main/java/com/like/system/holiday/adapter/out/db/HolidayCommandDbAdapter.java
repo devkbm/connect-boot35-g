@@ -20,6 +20,11 @@ public class HolidayCommandDbAdapter implements HolidayCommandDbPort {
 	}
 	
 	@Override
+	public boolean exists(String companyCode, LocalDate date) {
+		return this.repository.existsById(new HolidayId(companyCode, date));
+	}
+	
+	@Override
 	public Optional<Holiday> select(String companyCode, LocalDate date) {
 		return this.repository.findById(new HolidayId(companyCode, date));
 	}

@@ -4,10 +4,15 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.like.system.menu_role.adapter.out.db.menu.querydsl.MenuHierarchyMapper;
 import com.like.system.menu_role.domain.menu.MenuHierarchy;
 import com.like.system.menu_role.domain.menu.QMenu;
 import com.like.system.menu_role.domain.menu_role.QMenuRoleMapping;
+import com.like.system.webresource.domain.QWebResource;
+import com.querydsl.core.types.Expression;
+import com.querydsl.core.types.Projections;
+import com.querydsl.core.types.QBean;
+import com.querydsl.core.types.dsl.CaseBuilder;
+import com.querydsl.jpa.JPAExpressions;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
 @Repository
@@ -23,7 +28,7 @@ public class MenuHierarchyByRolesSelectQuerydsl {
 	
 	public List<MenuHierarchy> select(String companyCode, String menuGroupCode, List<String> roleCodes) {		
 		return queryFactory
-				.select(MenuHierarchyMapper.map(qMenu)).distinct()
+				.select(map(qMenu)).distinct()
 				/*
 				.select(Projections.fields(MenuHierarchy.class,
 						qMenu.id.menuGroupId.companyCode,
@@ -52,6 +57,32 @@ public class MenuHierarchyByRolesSelectQuerydsl {
 				.orderBy(qMenu.sequence.asc())
 				.fetch();
 		
+	}
+	
+	private QBean<MenuHierarchy> map(QMenu qMenu) {
+		
+		QWebResource resource = QWebResource.webResource;
+					
+		Expression<String> appIcon = new CaseBuilder()
+				.when(qMenu.appIcon.appIconType.eq("RESOURCE")).then(
+						JPAExpressions.select(resource.url).from(resource).where(resource.id.eq(qMenu.appIcon.appIcon))
+						)
+				.otherwise(qMenu.appIcon.appIcon).as("appIcon");
+		
+		return Projections.fields(MenuHierarchy.class,
+				qMenu.id.menuGroupId.companyCode,
+				qMenu.id.menuGroupId.menuGroupCode,
+				qMenu.id.menuCode,
+				qMenu.name.as("menuName"),
+				qMenu.type.as("menuType"),
+				qMenu.appUrl,
+				qMenu.appIcon.appIconType.as("appIconType"),
+				appIcon,
+				//qMenu.appIcon.appIcon,
+				qMenu.sequence,
+				qMenu.level,						
+				qMenu.parentMenuCode
+				);
 	}
 	
 }

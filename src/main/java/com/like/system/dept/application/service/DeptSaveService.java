@@ -23,8 +23,19 @@ public class DeptSaveService implements DeptSaveUseCase {
 	}
 
 	@Override
-	public void save(DeptSaveDTO dto) {
-		Dept parent = dbPort.select(dto.companyCode(), dto.parentDeptCode()).orElse(null);
+	public void save(DeptSaveDTO dto) {			
+		Dept entity = null;
+		Dept parent = dto.parentDeptCode() != null ? dbPort.select(dto.companyCode(), dto.parentDeptCode()).orElse(null) : null;
+		
+		if (exists(dto.companyCode(),dto.deptCode())) {
+			entity = this.dbPort.select(dto.companyCode(),dto.deptCode()).orElse(null);
+			
+			DeptSaveDTOMapper.modifyEntity(entity, dto, parent);
+			entity.modifiedAppUrl(dto.clientAppUrl());		
+		} else {
+			entity = DeptSaveDTOMapper.toEntity(dto, parent);
+			entity.createdAppUrl(dto.clientAppUrl());
+		}		
 		
 		this.dbPort.save(DeptSaveDTOMapper.toEntity(dto, parent));
 	}

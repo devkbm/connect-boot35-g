@@ -4,19 +4,6 @@ import com.like.system.holiday.domain.Holiday;
 import com.like.system.holiday.domain.HolidayId;
 
 public class HolidaySaveDTOMapper {
-
-	public static HolidaySaveDTO toDTO(Holiday entity) {
-		if (entity == null) return null;
-		
-		return HolidaySaveDTO
-					.builder()
-					.companyCode(entity.getId().getCompanyCode())
-					.date(entity.getId().getDate())
-					.holidayName(entity.getHolidayName())
-					.comment(entity.getComment())
-					.build(); 
-	}
-	
 	
 	public static Holiday newEntity(HolidaySaveDTO dto) {	
 		

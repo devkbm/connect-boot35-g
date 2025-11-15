@@ -1,4 +1,4 @@
-package com.like.system.menu_role.application.dto.menu_role;
+package com.like.system.menu_role.application.port.in.menu_role.save;
 
 import java.time.LocalDateTime;
 

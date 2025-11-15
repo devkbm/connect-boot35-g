@@ -2,7 +2,7 @@ package com.like.system.menu_role.application.service.menu_role;
 
 import org.springframework.util.StringUtils;
 
-import com.like.system.menu_role.application.dto.menu_role.MenuRoleHierarchyDTOByNgZorro;
+import com.like.system.menu_role.application.port.in.menu_role.select.MenuRoleHierarchyDTOByNgZorro;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -7,6 +7,8 @@ import com.like.system.holiday.domain.Holiday;
 
 public interface HolidayCommandDbPort {
 
+	boolean exists(String companyCode, LocalDate date);
+	
 	Optional<Holiday> select(String companyCode, LocalDate date);
 	
 	void save(Holiday entity);
