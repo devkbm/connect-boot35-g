@@ -14,7 +14,7 @@ import com.like.system.menu_role.export.MenuHierarchyNgZorroDTO;
 @Service
 public class MenuHierarchyByRolesSelectService implements MenuHierarchyByRolesSelectUseCase {
 
-	MenuHierarchyByRolesSelectDbPort dbPort;
+ 	MenuHierarchyByRolesSelectDbPort dbPort;
 	
 	MenuHierarchyByRolesSelectService(MenuHierarchyByRolesSelectDbPort dbPort) {
 		this.dbPort = dbPort;
