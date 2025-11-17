@@ -16,7 +16,12 @@ public class BoardDbAdapter implements BoardCommandDbPort {
 	BoardDbAdapter(BoardRepository repository) {
 		this.repository = repository;
 	}
-
+	
+	@Override
+	public boolean exists(Long id) {
+		return this.repository.existsById(id);
+	}
+	
 	@Override
 	public Optional<Board> select(Long id) {
 		return this.repository.findById(id);
@@ -31,5 +36,7 @@ public class BoardDbAdapter implements BoardCommandDbPort {
 	public void delete(Long boardId) {
 		this.repository.deleteById(boardId);		
 	}
+
+	
 
 }

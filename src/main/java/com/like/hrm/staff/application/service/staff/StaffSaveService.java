@@ -25,6 +25,8 @@ public class StaffSaveService implements StaffSaveUseCase {
 		
 		dto.modifyEntity(staff);
 		
+		staff.modifiedAppUrl(dto.clientAppUrl());
+		
 		dbPort.save(staff);		
 	}
 

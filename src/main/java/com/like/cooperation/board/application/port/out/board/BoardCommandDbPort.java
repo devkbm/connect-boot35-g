@@ -5,6 +5,8 @@ import java.util.Optional;
 import com.like.cooperation.board.domain.board.Board;
 
 public interface BoardCommandDbPort {
+	boolean exists(Long id);
+	
 	Optional<Board> select(Long id);
 	
 	void save(Board entity);

@@ -19,9 +19,21 @@ public class BoardSaveService implements BoardSaveUseCase {
 	
 	@Override
 	public void save(BoardSaveDTO dto) {
-		Board parentBoard = dto.boardParentId() == null ? null : this.dbPort.select(Long.parseLong(dto.boardParentId())).orElse(null);
+		Board entity = null;
+		Board parentBoard = dto.boardParentId() == null ? null : getParentBoard(Long.parseLong(dto.boardParentId()));
+				
+		if (dto.boardId() == null) {
+			entity = BoardSaveDTOMapper.toEntity(dto, parentBoard);
+		} else {
+			entity = this.dbPort.select(Long.parseLong(dto.boardId())).orElse(null);
+			BoardSaveDTOMapper.modifyBoard(dto, entity, parentBoard); 
+		}
 		
-		this.dbPort.save(BoardSaveDTOMapper.toEntity(dto, parentBoard));		
+		this.dbPort.save(entity);		
+	}
+	
+	private Board getParentBoard(Long boardParentId) {
+		return this.dbPort.select(boardParentId).orElse(null); 
 	}
 
 }

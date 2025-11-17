@@ -35,26 +35,6 @@ public class PartnerCompanyStaffSaveDTOMapper {
 				dto.blngDeptCode(),
 				dto.workDeptCode()
 				);
-	}
-	
-	public static PartnerCompanyStaffSaveDTO toDTO(PartnerCompanyStaff entity) {
-		if (entity == null) return null;
-		
-		return PartnerCompanyStaffSaveDTO
-				.builder()
-				.companyCode(entity.getId().companyCode())
-				.staffNo(entity.getId().staffNo())
-				.name(entity.getName().getName())
-				.nameEng(entity.getName().getNameEng())
-				.nameChi(entity.getName().getNameChi())
-				.gender(entity.getGender())
-				.birthday(entity.getBirthday())
-				.partnerCompanyCode(entity.getPartnerCompanyCode())
-				.joinDate(entity.getJoinDate())
-				.retireDate(entity.getRetireDate())
-				.blngDeptCode(entity.getBlngDeptCode())
-				.workDeptCode(entity.getWorkDeptCode())
-				.build(); 
 	}	
 	
 }

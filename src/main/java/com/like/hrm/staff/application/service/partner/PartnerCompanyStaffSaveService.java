@@ -18,14 +18,15 @@ public class PartnerCompanyStaffSaveService implements PartnerCompanyStaffSaveUs
 	}
 	
 	@Override
-	public void save(PartnerCompanyStaffSaveDTO dto) {
-		
+	public void save(PartnerCompanyStaffSaveDTO dto) {		
 		PartnerCompanyStaff entity = this.dbPort.select(dto.companyCode(), dto.staffNo()).orElse(null);
 		
 		if (entity == null) {
 			entity = PartnerCompanyStaffSaveDTOMapper.create(dto);
+			entity.createdAppUrl(dto.clientAppUrl());
  		} else {
  			PartnerCompanyStaffSaveDTOMapper.modify(entity, dto);
+ 			entity.modifiedAppUrl(dto.clientAppUrl());
  		}
 		
 		this.dbPort.save(entity);		
