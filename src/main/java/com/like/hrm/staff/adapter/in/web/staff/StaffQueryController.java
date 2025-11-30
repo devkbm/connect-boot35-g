@@ -5,6 +5,7 @@ import static com.like.core.web.util.ResponseEntityUtil.toOne;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.like.hrm.staff.application.port.in.staff.query.StaffQueryDTO;
 import com.like.hrm.staff.application.port.in.staff.query.StaffQueryResultDTO;
 import com.like.hrm.staff.application.port.in.staff.query.StaffQueryUseCase;
 
+@PrimaryAdapter
 @RestController
 public class StaffQueryController {
 	

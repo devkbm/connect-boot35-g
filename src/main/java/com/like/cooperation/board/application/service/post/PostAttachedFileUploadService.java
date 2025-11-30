@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,6 +16,7 @@ import com.like.cooperation.board.application.port.out.post.PostCommandDbPort;
 import com.like.cooperation.board.domain.post.Post;
 import com.like.cooperation.board.domain.post.PostAttachedFile;
 
+@Application
 @Service
 public class PostAttachedFileUploadService implements PostAttachedFileUploadUseCase {
 

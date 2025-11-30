@@ -1,11 +1,13 @@
 package com.like.cooperation.workcalendar.adapter.out.db;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.cooperation.workcalendar.adapter.out.db.data.WorkCalendarEventJpaRepository;
 import com.like.cooperation.workcalendar.application.port.out.WorkCalendarEventCommandDbPort;
 import com.like.cooperation.workcalendar.domain.WorkCalendarEvent;
 
+@SecondaryAdapter
 @Repository
 public class WorkCalendarEventCommandDbAdapter implements WorkCalendarEventCommandDbPort {
 

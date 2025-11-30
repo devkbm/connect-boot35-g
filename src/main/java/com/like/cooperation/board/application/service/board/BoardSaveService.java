@@ -1,5 +1,6 @@
 package com.like.cooperation.board.application.service.board;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.cooperation.board.application.port.in.board.save.BoardSaveDTO;
@@ -8,6 +9,7 @@ import com.like.cooperation.board.application.port.in.board.save.BoardSaveUseCas
 import com.like.cooperation.board.application.port.out.board.BoardCommandDbPort;
 import com.like.cooperation.board.domain.board.Board;
 
+@Application
 @Service
 public class BoardSaveService implements BoardSaveUseCase {
 

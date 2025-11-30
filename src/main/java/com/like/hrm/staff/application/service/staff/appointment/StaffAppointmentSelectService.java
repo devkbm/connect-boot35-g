@@ -1,5 +1,6 @@
 package com.like.hrm.staff.application.service.staff.appointment;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.staff.application.port.in.staff.appointment.select.StaffAppointmentRecordSelectDTO;
@@ -8,6 +9,7 @@ import com.like.hrm.staff.application.port.in.staff.appointment.select.StaffAppo
 import com.like.hrm.staff.application.port.out.staff.StaffAppointmentCommandDbPort;
 import com.like.hrm.staff.domain.staff.appointment.AppointmentRecord;
 
+@Application
 @Service
 public class StaffAppointmentSelectService implements StaffAppointmentSelectUseCase {
 

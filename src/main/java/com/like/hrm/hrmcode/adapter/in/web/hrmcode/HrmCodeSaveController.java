@@ -2,6 +2,7 @@ package com.like.hrm.hrmcode.adapter.in.web.hrmcode;
 
 import static com.like.core.web.util.ResponseEntityUtil.toList;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import com.like.hrm.hrmcode.application.port.in.hrmcode.HrmCodeSaveUseCase;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+@PrimaryAdapter
 @RestController
 public class HrmCodeSaveController {
 

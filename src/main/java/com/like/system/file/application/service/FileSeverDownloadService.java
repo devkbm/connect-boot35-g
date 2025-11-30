@@ -2,6 +2,7 @@ package com.like.system.file.application.service;
 
 import java.io.File;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +12,7 @@ import com.like.system.file.application.port.out.FileInfoCommandDbPort;
 import com.like.system.file.domain.FileInfo;
 
 @Transactional
+@Application
 @Service
 public class FileSeverDownloadService implements FileServerDownloadUseCase {
 

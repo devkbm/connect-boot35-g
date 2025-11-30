@@ -2,6 +2,7 @@ package com.like.cooperation.workcalendar.adapter.out.db;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.cooperation.workcalendar.domain.WorkCalendarEvent;
@@ -12,6 +13,7 @@ import com.like.cooperation.workcalendar.application.port.out.WorkCalendarEventQ
 import com.like.cooperation.workcalendar.domain.QWorkCalendarEvent;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
+@SecondaryAdapter
 @Repository
 public class WorkCalendarEventQueryDbAdapter implements WorkCalendarEventQueryDbPort {
 	private JPAQueryFactory queryFactory;

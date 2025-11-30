@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,6 +19,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.like.cooperation.board.application.port.in.post.attach.PostAttachedFileUploadUseCase;
 
+@PrimaryAdapter
 @Controller
 public class PostAttachedFileUploadController {
 	

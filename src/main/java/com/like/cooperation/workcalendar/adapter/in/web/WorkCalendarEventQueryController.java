@@ -4,6 +4,7 @@ import static com.like.core.web.util.ResponseEntityUtil.toList;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,6 +15,7 @@ import com.like.cooperation.workcalendar.application.port.in.event.query.WorkCal
 import com.like.cooperation.workcalendar.application.port.in.event.query.WorkCalendarEventQueryUseCase;
 import com.like.core.message.MessageUtil;
 
+@PrimaryAdapter
 @RestController
 public class WorkCalendarEventQueryController {
 

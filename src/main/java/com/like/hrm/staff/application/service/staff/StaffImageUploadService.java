@@ -3,6 +3,7 @@ package com.like.hrm.staff.application.service.staff;
 import java.io.File;
 import java.io.IOException;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.staff.application.port.in.staff.StaffImageUploadUseCase;
@@ -11,6 +12,7 @@ import com.like.hrm.staff.domain.staff.Staff;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Application
 @Service
 public class StaffImageUploadService implements StaffImageUploadUseCase {
 	

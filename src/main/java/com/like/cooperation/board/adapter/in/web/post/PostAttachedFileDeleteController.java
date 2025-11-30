@@ -4,6 +4,7 @@ import static com.like.core.web.util.ResponseEntityUtil.toList;
 
 import java.io.FileNotFoundException;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.like.cooperation.board.application.port.in.post.attach.PostAttachedFileDeleteUseCase;
 import com.like.core.message.MessageUtil;
 
+@PrimaryAdapter
 @Controller
 public class PostAttachedFileDeleteController {
 

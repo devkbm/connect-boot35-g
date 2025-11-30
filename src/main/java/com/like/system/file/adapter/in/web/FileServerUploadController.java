@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,6 +23,7 @@ import com.like.system.file.application.port.in.FileServerUploadUseCase;
 import com.like.system.file.domain.FileInfo;
 import com.like.system.file.export.FileResponseDTO;
 
+@PrimaryAdapter
 @Controller
 public class FileServerUploadController {
 				

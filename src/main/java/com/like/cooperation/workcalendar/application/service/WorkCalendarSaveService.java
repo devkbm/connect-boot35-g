@@ -2,6 +2,7 @@ package com.like.cooperation.workcalendar.application.service;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,8 +14,9 @@ import com.like.cooperation.workcalendar.domain.WorkCalendar;
 import com.like.cooperation.workcalendar.domain.WorkCalendarMember;
 import com.like.system.user.export.SystemUserDTOSelectUseCase;
 
-@Transactional
+@Application
 @Service
+@Transactional
 public class WorkCalendarSaveService implements WorkCalendarSaveUseCase {
 
 	WorkCalendarCommandDbPort dbPort;

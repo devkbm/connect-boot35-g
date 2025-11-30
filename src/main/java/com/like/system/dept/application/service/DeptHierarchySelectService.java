@@ -3,6 +3,7 @@ package com.like.system.dept.application.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +15,7 @@ import com.like.system.dept.domain.DeptHierarchy;
 import com.like.system.dept.domain.DeptHierarchyGenerator;
 
 @Transactional(readOnly = true)
+@Application
 @Service
 public class DeptHierarchySelectService implements DeptHierarchyQueryUseCase {
 

@@ -2,6 +2,7 @@ package com.like.system.dept.application.service;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,6 +13,7 @@ import com.like.system.dept.application.port.in.save.DeptSaveDTOMapper;
 import com.like.system.dept.application.port.out.DeptQueryDbPort;
 
 @Transactional(readOnly = true)
+@Application
 @Service
 public class DeptQueryService implements DeptQueryUseCase {
 

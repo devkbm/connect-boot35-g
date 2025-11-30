@@ -1,11 +1,13 @@
 package com.like.hrm.hrmcode.application.service.hrmcode;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.hrmcode.application.port.in.hrmcode.HrmCodeDeleteUseCase;
 import com.like.hrm.hrmcode.application.port.out.hrmcode.HrmCodeCommandDbPort;
 import com.like.hrm.hrmcode.domain.HrmCodeId;
 
+@Application
 @Service
 public class HrmCodeDeleteService implements HrmCodeDeleteUseCase {
 

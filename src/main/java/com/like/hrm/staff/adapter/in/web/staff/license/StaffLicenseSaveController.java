@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 
 import static com.like.core.web.util.ResponseEntityUtil.toList;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import com.like.core.message.MessageUtil;
 import com.like.hrm.staff.application.port.in.staff.license.save.StaffLicenseSaveDTO;
 import com.like.hrm.staff.application.port.in.staff.license.save.StaffLicenseSaveUseCase;
 
+@PrimaryAdapter
 @RestController
 public class StaffLicenseSaveController {
 

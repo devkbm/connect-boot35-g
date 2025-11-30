@@ -1,5 +1,6 @@
 package com.like.hrm.hrmcode.application.service.hrmcodetype;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -8,6 +9,7 @@ import com.like.hrm.hrmcode.application.port.in.hrmcodetype.HrmCodeTypeSaveUseCa
 import com.like.hrm.hrmcode.application.port.out.hrmcodetype.HrmCodeTypeCommandDbPort;
 import com.like.hrm.hrmcode.domain.HrmCodeType;
 
+@Application
 @Service
 public class HrmCodeTypeSaveService implements HrmCodeTypeSaveUseCase {
 

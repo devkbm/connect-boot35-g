@@ -1,5 +1,6 @@
 package com.like.hrm.staff.application.service.staff.schoolcareer;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.staff.application.port.in.staff.schoolcareer.select.StaffSchoolCareerSelectDTO;
@@ -9,6 +10,7 @@ import com.like.hrm.staff.domain.staff.Staff;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Application
 @Service
 public class StaffSchoolCareerSelectService implements StaffSchoolCareerSelectUseCase {
 

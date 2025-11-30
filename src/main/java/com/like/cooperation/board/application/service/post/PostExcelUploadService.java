@@ -3,6 +3,7 @@ package com.like.cooperation.board.application.service.post;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.cooperation.board.application.port.in.post.upload.PostExcelUploadDTO;
@@ -12,8 +13,8 @@ import com.like.cooperation.board.application.port.out.post.PostCommandDbPort;
 import com.like.cooperation.board.domain.board.Board;
 import com.like.cooperation.board.domain.post.Post;
 import com.like.cooperation.board.domain.post.PostContents;
-import com.like.cooperation.board.util.Base64Util;
 
+@Application
 @Service
 public class PostExcelUploadService implements PostExcelUploadUseCase {
 

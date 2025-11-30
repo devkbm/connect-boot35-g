@@ -2,6 +2,7 @@ package com.like.cooperation.board.adapter.in.web.post;
 
 import static com.like.core.web.util.ResponseEntityUtil.toList;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +12,7 @@ import com.like.cooperation.board.application.port.in.post.save.PostSaveByMultiP
 import com.like.cooperation.board.application.port.in.post.save.PostSaveByMultipartDTO;
 import com.like.core.message.MessageUtil;
 
+@PrimaryAdapter
 @Controller
 public class PostSaveByMultiPartController {	
 					

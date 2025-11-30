@@ -2,6 +2,7 @@ package com.like.hrm.staff.application.service.staff;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.staff.application.port.in.staff.query.StaffCurrentAppointmentQueryResultDTO;
@@ -10,6 +11,7 @@ import com.like.hrm.staff.application.port.in.staff.query.StaffQueryResultDTO;
 import com.like.hrm.staff.application.port.in.staff.query.StaffQueryUseCase;
 import com.like.hrm.staff.application.port.out.staff.StaffQueryDbPort;
 
+@Application
 @Service
 public class StaffQueryService implements StaffQueryUseCase {
 

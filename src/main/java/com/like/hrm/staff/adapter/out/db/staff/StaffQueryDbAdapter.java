@@ -2,6 +2,7 @@ package com.like.hrm.staff.adapter.out.db.staff;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.hrm.staff.adapter.out.db.staff.querydsl.StaffQueryQuerydsl;
@@ -10,6 +11,7 @@ import com.like.hrm.staff.application.port.in.staff.query.StaffQueryDTO;
 import com.like.hrm.staff.application.port.in.staff.query.StaffQueryResultDTO;
 import com.like.hrm.staff.application.port.out.staff.StaffQueryDbPort;
 
+@SecondaryAdapter
 @Repository
 public class StaffQueryDbAdapter implements StaffQueryDbPort {
 

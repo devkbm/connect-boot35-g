@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpSession;
 
 import static com.like.core.web.util.ResponseEntityUtil.toOne;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import com.like.cooperation.board.util.Base64Util;
 import com.like.core.message.MessageUtil;
 import com.like.core.util.SessionUtil;
 
+@PrimaryAdapter
 @Controller
 public class PostSelectController {	
 			

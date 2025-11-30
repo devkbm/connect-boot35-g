@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.SliceImpl;
@@ -14,6 +15,7 @@ import com.like.cooperation.board.application.port.in.post.query.PostQueryResult
 import com.like.cooperation.board.application.port.in.post.query.PostQueryDTO;
 import com.like.cooperation.board.application.port.out.post.PostQueryBySliceDbPort;
 
+@SecondaryAdapter
 @Repository
 public class PostQueryBySliceDbAdapter implements PostQueryBySliceDbPort {
 	

@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 
 import static com.like.core.web.util.ResponseEntityUtil.toList;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import com.like.cooperation.board.application.port.in.board.save.BoardSaveDTO;
 import com.like.cooperation.board.application.port.in.board.save.BoardSaveUseCase;
 import com.like.core.message.MessageUtil;
 
+@PrimaryAdapter
 @RestController
 public class BoardSaveController {
 	

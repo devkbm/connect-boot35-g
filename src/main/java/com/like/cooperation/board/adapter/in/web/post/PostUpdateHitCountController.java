@@ -2,6 +2,7 @@ package com.like.cooperation.board.adapter.in.web.post;
 
 import static com.like.core.web.util.ResponseEntityUtil.toOne;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.like.cooperation.board.application.port.in.post.save.PostUserHitCountUseCase;
 import com.like.cooperation.board.util.Base64Util;
 
+@PrimaryAdapter
 @RestController
 public class PostUpdateHitCountController {
 

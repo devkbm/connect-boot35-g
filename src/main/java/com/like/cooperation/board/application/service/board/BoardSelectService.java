@@ -1,5 +1,6 @@
 package com.like.cooperation.board.application.service.board;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.cooperation.board.application.port.in.board.select.BoardSelectDTO;
@@ -7,6 +8,7 @@ import com.like.cooperation.board.application.port.in.board.select.BoardSelectDT
 import com.like.cooperation.board.application.port.in.board.select.BoardSelectUseCase;
 import com.like.cooperation.board.application.port.out.board.BoardCommandDbPort;
 
+@Application
 @Service
 public class BoardSelectService implements BoardSelectUseCase {
 

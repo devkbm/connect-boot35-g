@@ -4,6 +4,7 @@ import static com.like.core.web.util.ResponseEntityUtil.toList;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +16,7 @@ import com.like.core.message.MessageUtil;
 import com.like.core.util.SessionUtil;
 import com.like.excel.upload.ExcelUploader;
 
+@PrimaryAdapter
 @Controller
 public class PostExcelUploadController {
 	

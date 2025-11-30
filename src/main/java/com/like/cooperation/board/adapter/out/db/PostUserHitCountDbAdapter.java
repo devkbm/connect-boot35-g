@@ -1,5 +1,6 @@
 package com.like.cooperation.board.adapter.out.db;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.cooperation.board.adapter.out.db.data.PostUserHitCountRepository;
@@ -8,6 +9,7 @@ import com.like.cooperation.board.domain.post.Post;
 import com.like.cooperation.board.domain.post.PostUserHitCount;
 import com.like.cooperation.board.domain.post.PostUserHitCountId;
 
+@SecondaryAdapter
 @Repository
 public class PostUserHitCountDbAdapter implements PostUserHitCountDbPort {
 

@@ -2,6 +2,7 @@ package com.like.hrm.hrmcode.adapter.out.db;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.hrm.hrmcode.application.dto.hrmcodetype.HrmCodeTypeQueryDTO;
@@ -10,6 +11,7 @@ import com.like.hrm.hrmcode.domain.HrmCodeType;
 import com.like.hrm.hrmcode.domain.QHrmCodeType;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
+@SecondaryAdapter
 @Repository
 public class HrmCodeTypeQueryDbAdapter implements HrmCodeTypeQueryDbPort {
 

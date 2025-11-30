@@ -1,5 +1,6 @@
 package com.like.cooperation.board.application.service.post;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.cooperation.board.application.port.in.post.save.PostUserHitCountUseCase;
@@ -7,6 +8,7 @@ import com.like.cooperation.board.application.port.out.post.PostCommandDbPort;
 import com.like.cooperation.board.application.port.out.post.PostUserHitCountDbPort;
 import com.like.cooperation.board.domain.post.Post;
 
+@Application
 @Service
 public class PostUserHitCountService implements PostUserHitCountUseCase {
 	

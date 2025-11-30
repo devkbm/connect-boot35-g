@@ -2,12 +2,14 @@ package com.like.system.file.adapter.out.db;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.system.file.adapter.out.db.jpa.FileInfoJpaRepository;
 import com.like.system.file.application.port.out.FileInfoCommandDbPort;
 import com.like.system.file.domain.FileInfo;
 
+@SecondaryAdapter
 @Repository
 public class FileInfoCommandDbAdapter implements FileInfoCommandDbPort  {
 

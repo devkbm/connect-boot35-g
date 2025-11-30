@@ -2,6 +2,7 @@ package com.like.hrm.staff.adapter.in.web.staff;
 
 import static com.like.core.web.util.ResponseEntityUtil.toOne;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.like.hrm.staff.adapter.out.db.staff.data.StaffJpaRepository;
 import com.like.hrm.staff.domain.staff.StaffId;
 
+@PrimaryAdapter
 @RestController
 public class StaffFormValidController {
 

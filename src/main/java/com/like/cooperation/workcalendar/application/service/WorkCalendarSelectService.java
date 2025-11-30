@@ -1,5 +1,6 @@
 package com.like.cooperation.workcalendar.application.service;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,6 +9,7 @@ import com.like.cooperation.workcalendar.application.port.in.calendar.select.Wor
 import com.like.cooperation.workcalendar.application.port.out.WorkCalendarCommandDbPort;
 
 @Transactional
+@Application
 @Service
 public class WorkCalendarSelectService implements WorkCalendarSelectUseCase {
 

@@ -6,6 +6,7 @@ import static com.like.core.web.util.ResponseEntityUtil.toMap;
 import java.util.List;
 import java.util.Map;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +17,7 @@ import com.like.hrm.hrmcode.application.dto.hrmcode.HrmCodeSaveDTO;
 import com.like.hrm.hrmcode.application.port.in.hrmcode.HrmCodeQueryUseCase;
 import com.like.core.message.MessageUtil;
 
+@PrimaryAdapter
 @RestController
 public class HrmCodeQueryController {
 

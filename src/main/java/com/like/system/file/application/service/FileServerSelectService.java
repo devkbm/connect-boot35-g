@@ -2,12 +2,14 @@ package com.like.system.file.application.service;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.system.file.application.port.in.FileServerSelectUseCase;
 import com.like.system.file.application.port.out.FileInfoCommandDbPort;
 import com.like.system.file.domain.FileInfo;
 
+@Application
 @Service
 public class FileServerSelectService implements FileServerSelectUseCase {
 

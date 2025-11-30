@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import com.like.hrm.staff.application.port.in.staff.StaffSelectDTO;
 import com.like.hrm.staff.application.port.in.staff.StaffSelectUseCase;
 import com.like.system.file.adapter.out.file.FileConverterUtil;
 
+@PrimaryAdapter
 @Controller
 public class StaffImageDownloadController {
 		

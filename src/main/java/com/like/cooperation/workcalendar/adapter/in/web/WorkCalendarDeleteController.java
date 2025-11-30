@@ -2,6 +2,7 @@ package com.like.cooperation.workcalendar.adapter.in.web;
 
 import static com.like.core.web.util.ResponseEntityUtil.toOne;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.like.cooperation.workcalendar.application.port.in.calendar.delete.WorkCalendarDeleteUseCase;
 import com.like.core.message.MessageUtil;
 
+@PrimaryAdapter
 @RestController
 public class WorkCalendarDeleteController {
 

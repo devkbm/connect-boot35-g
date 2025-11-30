@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,6 +14,7 @@ import com.like.system.file.application.port.in.FileServerUploadUseCase;
 import com.like.system.file.application.port.out.FileInfoCommandDbPort;
 import com.like.system.file.domain.FileInfo;
 
+@Application
 @Service
 public class FileServerUploadService implements FileServerUploadUseCase {
 

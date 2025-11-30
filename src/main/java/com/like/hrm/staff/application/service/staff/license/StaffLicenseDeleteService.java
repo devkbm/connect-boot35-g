@@ -1,5 +1,6 @@
 package com.like.hrm.staff.application.service.staff.license;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.staff.application.port.in.staff.license.delete.StaffLicenseDeleteUseCase;
@@ -8,6 +9,7 @@ import com.like.hrm.staff.domain.staff.Staff;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Application
 @Service
 public class StaffLicenseDeleteService implements StaffLicenseDeleteUseCase {
 

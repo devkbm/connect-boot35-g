@@ -2,6 +2,7 @@ package com.like.cooperation.board.application.service.post;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +18,7 @@ import com.like.system.file.application.port.in.FileServerSelectUseCase;
 import com.like.system.file.application.port.in.FileServerUploadUseCase;
 import com.like.system.file.domain.FileInfo;
 
+@Application
 @Transactional
 @Service
 public class PostSaveByMultiPartService implements PostSaveByMultiPartUseCase {

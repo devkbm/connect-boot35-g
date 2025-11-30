@@ -10,6 +10,7 @@ import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.WritableByteChannel;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import com.like.cooperation.board.application.port.in.post.attach.PostAttachedFi
 
 import jakarta.servlet.http.HttpServletResponse;
 
+@PrimaryAdapter
 @Controller
 public class PostAttachedFileDownloadController {
 

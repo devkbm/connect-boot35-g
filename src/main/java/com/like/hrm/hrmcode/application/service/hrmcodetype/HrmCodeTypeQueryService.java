@@ -2,6 +2,7 @@ package com.like.hrm.hrmcode.application.service.hrmcodetype;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.hrmcode.application.dto.hrmcodetype.HrmCodeTypeQueryDTO;
@@ -9,6 +10,7 @@ import com.like.hrm.hrmcode.application.dto.hrmcodetype.HrmCodeTypeSaveDTO;
 import com.like.hrm.hrmcode.application.port.in.hrmcodetype.HrmCodeTypeQueryUseCase;
 import com.like.hrm.hrmcode.application.port.out.hrmcodetype.HrmCodeTypeQueryDbPort;
 
+@Application
 @Service
 public class HrmCodeTypeQueryService implements HrmCodeTypeQueryUseCase {
 

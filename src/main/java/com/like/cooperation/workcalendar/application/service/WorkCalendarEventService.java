@@ -2,6 +2,7 @@ package com.like.cooperation.workcalendar.application.service;
 
 import jakarta.transaction.Transactional;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.cooperation.workcalendar.domain.WorkCalendarEvent;
@@ -10,6 +11,7 @@ import com.like.cooperation.workcalendar.adapter.out.db.data.WorkCalendarJpaRepo
 import com.like.cooperation.workcalendar.application.port.in.event.save.WorkCalendarEventSaveDTO;
 import com.like.cooperation.workcalendar.domain.WorkCalendar;
 
+@Application
 @Service
 @Transactional
 public class WorkCalendarEventService {

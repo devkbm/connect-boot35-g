@@ -1,5 +1,6 @@
 package com.like.hrm.staff.application.service.staff.dutyresponsibility;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +15,7 @@ import com.like.hrm.staff.domain.staff.dutyresponsibility.StaffDutyId;
 import jakarta.persistence.EntityNotFoundException;
 
 @Transactional
+@Application
 @Service
 public class StaffDutyResponsibilitySaveService implements StaffDutyResponsibilitySaveUseCase {
 

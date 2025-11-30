@@ -1,5 +1,6 @@
 package com.like.hrm.staff.application.service.partner;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.staff.application.port.in.partner.save.PartnerCompanyStaffSaveDTO;
@@ -8,6 +9,7 @@ import com.like.hrm.staff.application.port.in.partner.save.PartnerCompanyStaffSa
 import com.like.hrm.staff.application.port.out.partner.PartnerCompanyStaffCommandDbPort;
 import com.like.hrm.staff.domain.partner.PartnerCompanyStaff;
 
+@Application
 @Service
 public class PartnerCompanyStaffSaveService implements PartnerCompanyStaffSaveUseCase {
 

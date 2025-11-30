@@ -1,5 +1,6 @@
 package com.like.hrm.hrmcode.application.service.hrmcode;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -12,6 +13,7 @@ import com.like.hrm.hrmcode.domain.HrmCode;
 import com.like.hrm.hrmcode.domain.HrmCodeId;
 import com.like.hrm.hrmcode.domain.HrmCodeType;
 
+@Application
 @Service
 public class HrmCodeSelectService implements HrmCodeSelectUseCase {
 

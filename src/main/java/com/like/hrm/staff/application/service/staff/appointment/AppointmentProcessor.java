@@ -1,5 +1,6 @@
 package com.like.hrm.staff.application.service.staff.appointment;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.hrmcode.application.dto.hrmcode.HrmCodeSelectDTO;
@@ -14,6 +15,7 @@ import com.like.hrm.staff.domain.staff.period.StaffPeriod;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Application
 @Service
 public class AppointmentProcessor implements StaffAppointmentApplyUseCase {
 	

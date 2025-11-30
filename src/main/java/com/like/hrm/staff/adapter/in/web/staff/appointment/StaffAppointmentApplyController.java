@@ -2,6 +2,7 @@ package com.like.hrm.staff.adapter.in.web.staff.appointment;
 
 import static com.like.core.web.util.ResponseEntityUtil.toList;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.like.hrm.staff.application.port.in.staff.appointment.StaffAppointmentApplyUseCase;
 
+@PrimaryAdapter
 @RestController
 public class StaffAppointmentApplyController {
 

@@ -2,6 +2,7 @@ package com.like.hrm.staff.application.service.staff;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.staff.application.port.in.staff.StaffCreateExcelUploadDTO;
@@ -13,6 +14,7 @@ import com.like.hrm.staff.domain.staff.StaffNoCreateStrategy;
 
 import jakarta.persistence.EntityExistsException;
 
+@Application
 @Service
 public class StaffCreateExcelUploadService implements StaffCreateExcelUploadUseCase {
 

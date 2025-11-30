@@ -2,6 +2,7 @@ package com.like.hrm.staff.adapter.out.db.partner;
 
 import java.util.Optional;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.hrm.staff.adapter.out.db.partner.data.PartnerCompanyStaffJpaRepository;
@@ -9,6 +10,7 @@ import com.like.hrm.staff.application.port.out.partner.PartnerCompanyStaffComman
 import com.like.hrm.staff.domain.partner.PartnerCompanyStaff;
 import com.like.hrm.staff.domain.staff.StaffId;
 
+@SecondaryAdapter
 @Repository
 public class PartnerCompanyStaffCommandDbAdapter implements PartnerCompanyStaffCommandDbPort {
 

@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.like.hrm.staff.adapter.out.file.StaffImageUploader;
 import com.like.hrm.staff.application.port.in.staff.StaffImageUploadUseCase;
 
+@PrimaryAdapter
 @Controller
 public class StaffImageUploadController {
 	

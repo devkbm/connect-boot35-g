@@ -3,6 +3,7 @@ package com.like.hrm.hrmcode.application.service.hrmcode;
 
 import static org.springframework.util.StringUtils.hasText;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -12,6 +13,7 @@ import com.like.hrm.hrmcode.application.port.out.hrmcode.HrmCodeCommandDbPort;
 import com.like.hrm.hrmcode.domain.HrmCode;
 import com.like.hrm.hrmcode.domain.HrmCodeId;
 
+@Application
 @Service
 public class HrmCodeSaveService implements HrmCodeSaveUseCase {
 

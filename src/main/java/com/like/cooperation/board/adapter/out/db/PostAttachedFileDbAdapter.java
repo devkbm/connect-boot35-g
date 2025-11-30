@@ -3,6 +3,7 @@ package com.like.cooperation.board.adapter.out.db;
 import java.util.List;
 import java.util.Optional;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.cooperation.board.adapter.out.db.data.PostAttachedFileRepository;
@@ -10,6 +11,7 @@ import com.like.cooperation.board.adapter.out.db.querydsl.PostAttachedFileQueryd
 import com.like.cooperation.board.application.port.out.post.PostAttachedFileDbPort;
 import com.like.cooperation.board.domain.post.PostAttachedFile;
 
+@SecondaryAdapter
 @Repository
 public class PostAttachedFileDbAdapter implements PostAttachedFileDbPort {
 

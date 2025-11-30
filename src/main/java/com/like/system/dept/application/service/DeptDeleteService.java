@@ -1,11 +1,12 @@
 package com.like.system.dept.application.service;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.system.dept.application.port.in.delete.DeptDeleteUseCase;
 import com.like.system.dept.application.port.out.DeptCommandDbPort;
 
-
+@Application
 @Service
 public class DeptDeleteService implements DeptDeleteUseCase {
 

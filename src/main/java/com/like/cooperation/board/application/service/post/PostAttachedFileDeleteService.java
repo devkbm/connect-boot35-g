@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.cooperation.board.adapter.out.file.PostAttachedFileServerRepository;
@@ -13,6 +14,7 @@ import com.like.cooperation.board.application.port.out.post.PostCommandDbPort;
 import com.like.cooperation.board.domain.post.Post;
 import com.like.cooperation.board.domain.post.PostAttachedFile;
 
+@Application
 @Service
 public class PostAttachedFileDeleteService implements PostAttachedFileDeleteUseCase {
 

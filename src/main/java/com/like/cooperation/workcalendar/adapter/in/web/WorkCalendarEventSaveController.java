@@ -2,6 +2,7 @@ package com.like.cooperation.workcalendar.adapter.in.web;
 
 import static com.like.core.web.util.ResponseEntityUtil.toOne;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import com.like.core.message.MessageUtil;
 
 import jakarta.validation.Valid;
 
+@PrimaryAdapter
 @RestController
 public class WorkCalendarEventSaveController {
 

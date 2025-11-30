@@ -1,5 +1,6 @@
 package com.like.cooperation.board.adapter.in.web.post;
 
+import org.jmolecules.architecture.hexagonal.PrimaryAdapter;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import com.like.cooperation.board.application.port.in.post.query.PostQueryBySlic
 import com.like.cooperation.board.application.port.in.post.query.PostQueryDTO;
 import com.like.core.util.SessionUtil;
 
+@PrimaryAdapter
 @Controller
 public class PostQueryBySliceController {
 

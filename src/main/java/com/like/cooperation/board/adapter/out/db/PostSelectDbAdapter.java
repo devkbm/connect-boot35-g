@@ -2,6 +2,7 @@ package com.like.cooperation.board.adapter.out.db;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.cooperation.board.adapter.out.db.data.PostAttachedFileRepository;
@@ -11,6 +12,7 @@ import com.like.cooperation.board.application.port.out.post.PostSelectDbPort;
 import com.like.cooperation.board.domain.post.PostAttachedFile;
 import com.like.cooperation.board.domain.post.QPostAttachedFile;
 
+@SecondaryAdapter
 @Repository
 public class PostSelectDbAdapter implements PostSelectDbPort {
 

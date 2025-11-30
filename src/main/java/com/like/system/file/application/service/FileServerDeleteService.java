@@ -3,6 +3,7 @@ package com.like.system.file.application.service;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.system.file.adapter.out.file.FileServerRepository;
@@ -10,6 +11,7 @@ import com.like.system.file.application.port.in.FileServerDeleteUseCase;
 import com.like.system.file.application.port.out.FileInfoCommandDbPort;
 import com.like.system.file.domain.FileInfo;
 
+@Application
 @Service
 public class FileServerDeleteService implements FileServerDeleteUseCase {
 

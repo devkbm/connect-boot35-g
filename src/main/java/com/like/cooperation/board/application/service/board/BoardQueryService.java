@@ -2,6 +2,7 @@ package com.like.cooperation.board.application.service.board;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +12,7 @@ import com.like.cooperation.board.application.port.in.board.query.BoardQueryResu
 import com.like.cooperation.board.application.port.in.board.query.BoardQueryUseCase;
 import com.like.cooperation.board.application.port.out.board.BoardQueryDbPort;
 
+@Application
 @Transactional(readOnly=true)
 @Service
 public class BoardQueryService implements BoardQueryUseCase {

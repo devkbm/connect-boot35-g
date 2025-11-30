@@ -2,6 +2,7 @@ package com.like.cooperation.board.application.service.post;
 
 import java.io.File;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.cooperation.board.application.port.in.post.attach.PostAttachedFileDownloadDTO;
@@ -9,6 +10,7 @@ import com.like.cooperation.board.application.port.in.post.attach.PostAttachedFi
 import com.like.cooperation.board.application.port.out.post.PostAttachedFileDbPort;
 import com.like.cooperation.board.domain.post.PostAttachedFile;
 
+@Application
 @Service
 public class PostAttachedFileDownLoadService implements PostAttachedFileDownloadUseCase {
 

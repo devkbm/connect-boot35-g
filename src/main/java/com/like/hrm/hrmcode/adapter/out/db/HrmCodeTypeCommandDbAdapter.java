@@ -2,12 +2,14 @@ package com.like.hrm.hrmcode.adapter.out.db;
 
 import java.util.Optional;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.hrm.hrmcode.adapter.out.db.jpa.HrmCodeTypeRepository;
 import com.like.hrm.hrmcode.application.port.out.hrmcodetype.HrmCodeTypeCommandDbPort;
 import com.like.hrm.hrmcode.domain.HrmCodeType;
 
+@SecondaryAdapter
 @Repository
 public class HrmCodeTypeCommandDbAdapter implements HrmCodeTypeCommandDbPort {
 

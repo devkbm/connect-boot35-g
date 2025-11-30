@@ -1,5 +1,6 @@
 package com.like.cooperation.board.application.service.post;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import com.like.cooperation.board.application.port.in.post.query.PostQueryBySlic
 import com.like.cooperation.board.application.port.in.post.query.PostQueryDTO;
 import com.like.cooperation.board.application.port.out.post.PostQueryBySliceDbPort;
 
+@Application
 @Transactional(readOnly = true)
 @Service
 public class PostQueryBySliceService implements PostQueryBySliceUseCase {

@@ -3,6 +3,7 @@ package com.like.hrm.staff.adapter.out.db.staff;
 import java.util.List;
 import java.util.Optional;
 
+import org.jmolecules.architecture.hexagonal.SecondaryAdapter;
 import org.springframework.stereotype.Repository;
 
 import com.like.hrm.staff.adapter.out.db.staff.data.StaffContactInfoJpaRepository;
@@ -10,6 +11,7 @@ import com.like.hrm.staff.application.port.out.staff.StaffContactInfoCommandDbPo
 import com.like.hrm.staff.domain.staff.contact.ContactInfo;
 import com.like.hrm.staff.domain.staff.contact.ContactInfoId;
 
+@SecondaryAdapter
 @Repository
 public class StaffContactInfoCommandDbAdapter implements StaffContactInfoCommandDbPort {
 

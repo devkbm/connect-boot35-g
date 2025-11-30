@@ -1,5 +1,6 @@
 package com.like.cooperation.board.application.service.post;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -18,6 +19,7 @@ import com.like.system.file.export.FileUploadUseCase;
 
 import lombok.extern.slf4j.Slf4j;
 
+@Application
 @Slf4j
 @Transactional
 @Service

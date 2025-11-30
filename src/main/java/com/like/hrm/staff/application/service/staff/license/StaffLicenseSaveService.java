@@ -1,5 +1,6 @@
 package com.like.hrm.staff.application.service.staff.license;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +15,7 @@ import com.like.hrm.staff.domain.staff.license.StaffLicenseId;
 import jakarta.persistence.EntityNotFoundException;
 
 @Transactional
+@Application
 @Service
 public class StaffLicenseSaveService implements StaffLicenseSaveUseCase {
 

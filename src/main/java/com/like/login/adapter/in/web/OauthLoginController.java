@@ -44,9 +44,11 @@ public class OauthLoginController {
 	
     private RestTemplateBuilder restTemplateBuilder;
     
-    public OauthLoginController(SystemUserSelectService userService
-    						   ,OAuth2AuthorizedClientService authorizedClientService
-    						   ,RestTemplateBuilder restTemplateBuilder) {
+    public OauthLoginController(
+    		SystemUserSelectService userService,
+    		OAuth2AuthorizedClientService authorizedClientService,
+    		RestTemplateBuilder restTemplateBuilder
+    		) {
     	this.userService = userService;
     	this.authorizedClientService = authorizedClientService;
     	this.restTemplateBuilder = restTemplateBuilder;    	

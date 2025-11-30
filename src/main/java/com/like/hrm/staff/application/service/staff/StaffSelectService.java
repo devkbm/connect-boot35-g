@@ -1,11 +1,13 @@
 package com.like.hrm.staff.application.service.staff;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.staff.application.port.in.staff.StaffSelectDTO;
 import com.like.hrm.staff.application.port.in.staff.StaffSelectUseCase;
 import com.like.hrm.staff.application.port.out.staff.StaffCommandDbPort;
 
+@Application
 @Service
 public class StaffSelectService implements StaffSelectUseCase {
 

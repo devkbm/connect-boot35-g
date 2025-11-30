@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -12,6 +13,7 @@ import com.like.hrm.hrmcode.application.dto.hrmcode.HrmCodeSaveDTO;
 import com.like.hrm.hrmcode.application.port.in.hrmcode.HrmCodeQueryUseCase;
 import com.like.hrm.hrmcode.application.port.out.hrmcode.HrmCodeQueryDbPort;
 
+@Application
 @Service
 public class HrmCodeQueryService implements HrmCodeQueryUseCase {
 

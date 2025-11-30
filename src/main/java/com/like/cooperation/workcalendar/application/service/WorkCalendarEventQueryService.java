@@ -2,6 +2,7 @@ package com.like.cooperation.workcalendar.application.service;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +11,7 @@ import com.like.cooperation.workcalendar.application.port.in.event.query.WorkCal
 import com.like.cooperation.workcalendar.application.port.in.event.query.WorkCalendarEventQueryUseCase;
 import com.like.cooperation.workcalendar.application.port.out.WorkCalendarEventQueryDbPort;
 
+@Application
 @Transactional(readOnly=true)
 @Service
 public class WorkCalendarEventQueryService implements WorkCalendarEventQueryUseCase {

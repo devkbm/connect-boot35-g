@@ -1,5 +1,6 @@
 package com.like.hrm.staff.application.service.staff.dutyresponsibility;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 
 import com.like.hrm.staff.application.port.in.staff.dutyresponsibility.select.StaffDutyResponsibilitySelectDTO;
@@ -10,6 +11,7 @@ import com.like.hrm.staff.domain.staff.dutyresponsibility.StaffDuty;
 
 import jakarta.persistence.EntityNotFoundException;
 
+@Application
 @Service
 public class StaffDutyResponsibilitySelectService implements StaffDutyResponsibilitySelectUseCase {
 

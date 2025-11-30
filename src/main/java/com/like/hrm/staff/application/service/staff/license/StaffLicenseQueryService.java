@@ -2,6 +2,7 @@ package com.like.hrm.staff.application.service.staff.license;
 
 import java.util.List;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +11,7 @@ import com.like.hrm.staff.application.port.in.staff.license.query.StaffLicenseQu
 import com.like.hrm.staff.application.port.out.staff.StaffLicenseQueryDbPort;
 
 @Transactional(readOnly = true)
+@Application
 @Service
 public class StaffLicenseQueryService implements StaffLicenseQueryUseCase {
 

@@ -1,5 +1,6 @@
 package com.like.cooperation.workcalendar.application.service;
 
+import org.jmolecules.architecture.hexagonal.Application;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +11,7 @@ import com.like.cooperation.workcalendar.application.port.out.WorkCalendarEventC
 import com.like.cooperation.workcalendar.domain.WorkCalendar;
 import com.like.cooperation.workcalendar.domain.WorkCalendarEvent;
 
+@Application
 @Transactional
 @Service
 public class WorkCalendarEventSaveService implements WorkCalendarEventSaveUseCase {

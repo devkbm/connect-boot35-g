@@ -12,6 +12,7 @@ import com.like.hrm.hrmcode.domain.QHrmRelationCode;
 //import com.like.system.hierarchycode.domain.QCode;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 
+
 @Repository
 public class HrmRelationCodeQueryJpaRepository implements HrmRelationCodeQueryRepository {
 
